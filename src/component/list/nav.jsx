@@ -17,7 +17,7 @@ const Nav = styled.div`
   justify-content: space-around;
   margin-top: 3vh;
   border-top: 1px solid #9c9c9c;
-  background: #ffffff57;
+  background: #ffffff70;
   border-radius: 10px;
 `;
 function Navigator(props) {

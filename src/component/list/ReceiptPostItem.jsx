@@ -50,9 +50,7 @@ const TitleSubText = styled.span`
   color: #a6a6a6;
   font-family: "IBM Plex Sans KR";
   font-size: 11px;
-  font-style: normal;
   font-weight: 300;
-  line-height: normal;
 `;
 
 const StyledImage = styled.img`

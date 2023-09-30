@@ -65,7 +65,7 @@ const Content = styled.p`
 `;
 
 function PostListItem(props) {
-  const { text, subtext, content, className, btnName, btnid } = props;
+  const { text, subtext, content, className, btnName, btnid, onClick } = props;
   // post의 내용들이 있는 곳
   return (
     <Wrapper>
@@ -77,13 +77,7 @@ function PostListItem(props) {
         <Content>{content || "default"}</Content>
       </Container>
       <Container id="btnContainer" className={className}>
-        <Button
-          btnid={btnid}
-          title={btnName}
-          onClick={() => {
-            navigate("/");
-          }}
-        />
+        <Button btnid={btnid} title={btnName} onClick={onClick} />
       </Container>
     </Wrapper>
   );

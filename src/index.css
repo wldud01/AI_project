@@ -69,7 +69,7 @@ code {
   line-height: normal;
 }
 #ctn_2_btn {
-  width: 89px;
+  width: 94px;
   height: 40px;
   font-family: "IBM Plex Sans KR";
   font-size: 15px;
@@ -107,9 +107,38 @@ code {
   height: 84%;
 }
 
-.imageClick{
+.imageClick {
   width: 23px;
   height: 25px;
   border-radius: 26%;
   box-shadow: -2px -2px 17px 1px #689dff;
+}
+
+#inputBtnBack {
+  width: 107px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #06f;
+  background: #ebf5ff;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 10px;
+  margin-left: 0px;
+  margin-top: 5%;
+}
+#inputBtnNext {
+  width: 107px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f2f7ff;
+  background: #0063f8;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 10px;
+  margin-left: 0px;
+  margin-top: 5%;
 }

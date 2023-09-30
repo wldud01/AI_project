@@ -22,6 +22,17 @@ const Wrapper = styled.div`
   align-items: center;
   //justify-content: center;
 `;
+const BestWrapper = styled.div`
+  width: 100%;
+  height: 39%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8%;
+  /* border-radius: 0px; */
+  background: linear-gradient(255deg, #4fc5eb 0%, #5d52d9 100%);
+  filter: blur(2px);
+`;
 
 // button contents에 감싸는 container
 const Container = styled.div`
@@ -33,7 +44,7 @@ const Container = styled.div`
 
 // mainpage body에 해당하는 부분
 function photoShare(props) {
-  const { post } = props;
+  const {} = props;
 
   const navigate = useNavigate(); // route를 사용하기 위해서 useNavigator를 보면
   // 그리고 버튼을 눌렀을 때 경로를 설정해 두고 만약 아이디마다 다른 값을 두고 싶다면 파라미터를 이용하자!
@@ -41,11 +52,14 @@ function photoShare(props) {
     <div>
       <Wrapper>
         <Container>
+          <BestWrapper>
+            <Container />
+          </BestWrapper>
           <ContentBox post={data} />
         </Container>
         <Container />
       </Wrapper>
-      <div class="main_nav">
+      <div className="main_nav">
         <Navi />
       </div>
     </div>

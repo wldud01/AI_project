@@ -32,7 +32,7 @@ const Container = styled.div`
 
 // mainpage body에 해당하는 부분
 function MainPage(props) {
-  const {} = props;
+  const { Image } = props;
   const [loading, setLoading] = useState(true);
 
   //데이터 불러오면서 걸리는 시간
@@ -61,6 +61,9 @@ function MainPage(props) {
                 content="내가 찍은 음식 사진 또는 만들고 싶은 음식 사진을 넣어주세요. 재료부터 만드는 방법까지 추천해드리겠습니다."
                 btnName="음식 사진 고르기"
                 btnid="ctn_1_btn"
+                onClick={() => {
+                  navigate("/main/input");
+                }}
               />
             </Container>
             <Container id="contentBoxContainer_2">
@@ -68,8 +71,11 @@ function MainPage(props) {
                 text="음식 사진 같이 보기"
                 subtext="Share your photo!"
                 content="내가 찍은 음식 사진을 공유해주세요. 좋은 레시피가 있다면 함께 공유해도 좋아요!"
-                btnName="사진 보기"
+                btnName="사진 올리기"
                 btnid="ctn_2_btn"
+                onClick={() => {
+                  navigate("/share/input");
+                }}
               />
             </Container>
           </Wrapper>
