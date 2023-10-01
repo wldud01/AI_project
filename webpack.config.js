@@ -3,7 +3,6 @@ const path = require("path");
 
 module.exports = {
   entry: "./src/index.jsx",
-
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
@@ -12,6 +11,8 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: "./public/index.html",
+      filename: "index.html",
+      manifest: "./public/manifest.json",
     }),
   ],
 

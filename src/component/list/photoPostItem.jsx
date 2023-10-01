@@ -21,10 +21,8 @@ const Wrapper = styled.div`
   height: 37%;
   border-radius: 18px;
   background: #fff;
+  cursor: pointer;
   box-shadow: 0px 34px 86px 0px rgba(1, 0, 60, 0.25);
-  :hover {
-    background: #f2f7ff;
-  }
 `;
 const Container = styled.div`
   display: flex;

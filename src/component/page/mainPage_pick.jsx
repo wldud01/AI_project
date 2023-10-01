@@ -25,7 +25,7 @@ const Container = styled.div`
   width: 91%;
   height: 73%;
   max-width: 45rem;
-  margin-top: 19%;
+  margin-top: 16%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,8 +103,8 @@ function MainPageInput(props) {
                     <img
                       src={selectedImage}
                       alt="Selected"
-                      width="300"
-                      height="200"
+                      width="200"
+                      height="100"
                     />
                   </div>
                 )}

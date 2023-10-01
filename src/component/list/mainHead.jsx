@@ -7,7 +7,7 @@ import Header from "../ui/header";
  */
 
 // 추후에 DB에서 바꾸기
-const foodlist = ["치킨", "국밥", "돈까스", "족발"];
+const foodlist = ["치킨", "국밥", "샐러드", "돈까스", "족발", "샌드위치"];
 function MainHeader() {
   const [index, setIndex] = useState(0);
 
@@ -21,8 +21,8 @@ function MainHeader() {
     const intervalId = setInterval(() => {
       upIndex();
       //console.log(index);
-    }, 2000);
-    if (index > 3) {
+    }, 1500);
+    if (index > 5) {
       setIndex(0);
     }
     return () => {
@@ -33,6 +33,6 @@ function MainHeader() {
   // header에 음식이 계속 바뀜
   const Food = foodlist[index];
 
-  return <Header span={Food + " 먹기 딱 좋은 날이네요"} />;
+  return <Header span={Food + " 먹기 딱 좋은 날"} />;
 }
 export default MainHeader;

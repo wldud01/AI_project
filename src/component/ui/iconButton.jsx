@@ -18,6 +18,7 @@ const StyledIconButton = styled.div`
 const StyledImage = styled.img`
   width: 23px;
   height: 25px;
+  cursor: pointer;
   &:focus {
     border-radius: 26%;
     box-shadow: -2px -2px 17px 1px #689dff;

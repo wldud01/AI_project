@@ -68,6 +68,10 @@ code {
   font-weight: bold;
   line-height: normal;
 }
+#ctn_1_btn:hover {
+  background: #06f;
+  color: white;
+}
 #ctn_2_btn {
   width: 94px;
   height: 40px;
@@ -80,6 +84,10 @@ code {
   background: #06f;
   color: white;
   box-shadow: 0px 34px 86px 0px rgba(1, 0, 60, 0.25);
+}
+#ctn_2_btn:hover {
+  background: #ffffff;
+  color: #0063f8;
 }
 .main_nav {
   width: 100%;

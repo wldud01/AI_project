@@ -16,8 +16,8 @@ const MainTitleText = styled.p`
   font-weight: 700;
   width: 100%;
   text-align: center;
-  margin-top: 27px;
-  margin-bottom: 6px;
+  margin-top: 13px;
+  margin-bottom: 1px;
 `;
 const MainHeader = styled.div`
   width: 100%;
@@ -26,9 +26,9 @@ const MainHeader = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
-  padding-bottom: 8px;
+  padding-bottom: 15px;
   box-sizing: border-box;
-  padding-top: 12px;
+  padding-top: 15px;
 `;
 const MainSubText = styled.p`
   font-size: 17px;
