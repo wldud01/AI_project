@@ -9,7 +9,13 @@ import Loading from "./loadingPage";
 // DB or api 임시방편
 import data from "../../data.json";
 
-// header 아래 body 부분을 감싸는 wapper
+/**
+ * Main page body부분에 해당
+ *  Wrapper header 아래 body 부분을 감싸는 wapper
+ *  Container button contents에 감싸는 container
+ *  좀 더 수정하고 싶은 부분은 CSS 활용
+ */
+
 const Wrapper = styled.div`
   width: 100%;
   height: 73vh;
@@ -19,7 +25,6 @@ const Wrapper = styled.div`
   //justify-content: center;
 `;
 
-// button contents에 감싸는 container
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -30,7 +35,6 @@ const Container = styled.div`
   }
 `;
 
-// mainpage body에 해당하는 부분
 function MainPage(props) {
   const { Image } = props;
   const [loading, setLoading] = useState(true);

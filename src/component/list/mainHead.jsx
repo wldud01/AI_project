@@ -7,7 +7,15 @@ import Header from "../ui/header";
  */
 
 // 추후에 DB에서 바꾸기
-const foodlist = ["치킨", "국밥", "샐러드", "돈까스", "족발", "샌드위치"];
+const foodlist = [
+  "치킨",
+  "국밥",
+  "샐러드",
+  "돈까스",
+  "족발",
+  "샌드위치",
+  "닭발",
+];
 function MainHeader() {
   const [index, setIndex] = useState(0);
 
@@ -22,7 +30,7 @@ function MainHeader() {
       upIndex();
       //console.log(index);
     }, 1500);
-    if (index > 5) {
+    if (index > 6) {
       setIndex(0);
     }
     return () => {

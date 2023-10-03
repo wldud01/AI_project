@@ -22,16 +22,15 @@ const Wrapper = styled.div`
   align-items: center;
   //justify-content: center;
 `;
-const BestWrapper = styled.div`
+const BestContentWrapper = styled.div`
   width: 100%;
-  height: 39%;
+  height: 43%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 8%;
-  /* border-radius: 0px; */
-  background: linear-gradient(255deg, #4fc5eb 0%, #5d52d9 100%);
-  filter: blur(2px);
+  background: linear-gradient(255deg, #4f83eb 0%, #52a7d91f 104%);
+  filter: blur(1px);
 `;
 
 // button contents에 감싸는 container
@@ -52,9 +51,9 @@ function photoShare(props) {
     <div>
       <Wrapper>
         <Container>
-          <BestWrapper>
+          <BestContentWrapper>
             <Container />
-          </BestWrapper>
+          </BestContentWrapper>
           <ContentBox post={data} />
         </Container>
         <Container />
