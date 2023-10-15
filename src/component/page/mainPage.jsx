@@ -4,10 +4,12 @@ import styled from "styled-components";
 //list
 import ContentBox from "../list/postListItem";
 import Navi from "../list/nav";
+import Header from "../list/mainHead";
 //ui
 import Loading from "./loadingPage";
 // DB or api 임시방편
 import data from "../../data.json";
+import logo from "./image/logo.png";
 
 /**
  * Main page body부분에 해당
@@ -18,21 +20,29 @@ import data from "../../data.json";
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 73vh;
+  height: 72vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 31%;
   //justify-content: center;
 `;
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: 30%;
   max-width: 45rem;
-  margin-top: 5%;
+  margin-top: 4%;
+  align-items: center;
   :hover {
     background: #f4f8fe;
   }
+`;
+const Space = styled.div`
+  width: 100%;
+  height: 85px;
+  max-width: 45rem;
+  margin-top: 5%;
 `;
 
 function MainPage(props) {
@@ -57,13 +67,26 @@ function MainPage(props) {
         <Loading />
       ) : (
         <div>
+          <Header src={logo} onClick={() => navigate(-1)} />
           <Wrapper>
             <Container id="contentBoxContainer_1">
               <ContentBox
-                text="CoCook 시작하기"
+                text="🍴오늘 뭐먹지?"
                 subtext="How to use this app?"
-                content="내가 찍은 음식 사진 또는 만들고 싶은 음식 사진을 넣어주세요. 재료부터 만드는 방법까지 추천해드리겠습니다."
-                btnName="음식 사진 고르기"
+                content="음식을 취향에 맞게 추천해드립니다. "
+                btnName="추천 받아보기"
+                btnid="ctn_1_btn"
+                onClick={() => {
+                  navigate("/main/input");
+                }}
+              />
+            </Container>
+            <Container id="contentBoxContainer_1">
+              <ContentBox
+                text="오늘 먹은 음식의 영양소는?"
+                subtext="오늘 먹은 칼로리가 몇이더라.."
+                content=" "
+                btnName="사진 고르기"
                 btnid="ctn_1_btn"
                 onClick={() => {
                   navigate("/main/input");
@@ -72,10 +95,10 @@ function MainPage(props) {
             </Container>
             <Container id="contentBoxContainer_2">
               <ContentBox
-                text="음식 사진 같이 보기"
-                subtext="Share your photo!"
-                content="내가 찍은 음식 사진을 공유해주세요. 좋은 레시피가 있다면 함께 공유해도 좋아요!"
-                btnName="사진 올리기"
+                text="숨은 맛집을 공유해주세요!"
+                subtext="여러분의 숨은 맛집은?"
+                content=" "
+                btnName="공유하기"
                 btnid="ctn_2_btn"
                 onClick={() => {
                   navigate("/share/input");
@@ -83,7 +106,7 @@ function MainPage(props) {
               />
             </Container>
           </Wrapper>
-
+          <Space />
           <div className="main_nav">
             <Navi />
           </div>

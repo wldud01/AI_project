@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 /**
@@ -26,12 +27,13 @@ const StyledImage = styled.img`
 `;
 
 function IconButton(props) {
-  const { title, onClick, ionBtnid, src } = props;
+  const navigate = useNavigate();
+  const { title, onClick, id, src } = props;
 
   return (
-    <StyledIconButton onClick={onClick} id={ionBtnid}>
+    <StyledIconButton onClick={onClick} id={id}>
       <StyledImage src={src} alt="Styled Image" />
-      {title || "button"}
+      {title || ""}
     </StyledIconButton>
   );
 }

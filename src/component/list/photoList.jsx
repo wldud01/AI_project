@@ -9,6 +9,7 @@ const Bottom = styled.div`
 const Wrapper = styled.div``;
 function PhotoList(props) {
   const { post, onClickItem } = props;
+
   // post값 자체도 props로 해서 매칭시킴
   return (
     <Wrapper id="PhotoContainer">

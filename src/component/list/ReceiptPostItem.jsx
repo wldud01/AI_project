@@ -55,8 +55,8 @@ const TitleSubText = styled.span`
 `;
 
 const StyledImage = styled.img`
-  width: 84%;
-  height: 66%;
+  width: 99%;
+  height: 70%;
   box-sizing: content-box;
   padding-bottom: 7px;
   border-radius: 10%;

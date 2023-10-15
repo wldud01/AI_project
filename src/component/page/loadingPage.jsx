@@ -7,6 +7,8 @@ import carrot from "./image/carrot.png";
 import burger from "./image/burger.png";
 import taco from "./image/taco.png";
 import sushi from "./image/sushi.png";
+import logo from "./image/logo.png";
+import Header from "../list/mainHead";
 
 // food random list
 const randomImage = [meat, egg, carrot, burger, taco, sushi];
@@ -23,13 +25,13 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   max-width: 45rem;
-  margin-top: 50%;
+  margin-top: 70%;
 
   color: #1e2a48;
   text-align: center;
   text-shadow: 0px 2px 2px rgba(138, 138, 138, 0.25);
   font-family: "IBM Plex Sans KR";
-  font-size: 32px;
+  font-size: 27px;
   font-weight: 700;
   letter-spacing: 2.56px;
   z-index: 0;
@@ -77,11 +79,12 @@ function LoadingPage(props) {
   // 그리고 버튼을 눌렀을 때 경로를 설정해 두고 만약 아이디마다 다른 값을 두고 싶다면 파라미터를 이용하자!
   return (
     <div>
+      <Header src={logo} />
       <Wrapper>
         <Container>
           <BackImg src={Food} />
           <Span>{sub || "쩝쩝박사 모여라"}</Span>
-          {text || "Cocook"}
+          {text || "COM2AT"}
         </Container>
       </Wrapper>
     </div>

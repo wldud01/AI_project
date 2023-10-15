@@ -10,14 +10,14 @@ import IconButton from "../ui/iconButton";
 
 const Nav = styled.div`
   position: fixed;
-  width: 86%;
+  width: 92%;
   height: 70px;
-  display: flex;
+  display: contents;
   align-items: center;
   justify-content: space-around;
-  margin-top: 1.5vh;
+  margin-top: 0.5vh;
   border-top: 1px solid #9c9c9c;
-  background: #ffffff70;
+  background: #ffffff26;
   border-radius: 10px;
 `;
 function Navigator(props) {

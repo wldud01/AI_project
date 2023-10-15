@@ -10,13 +10,13 @@ body {
 }
 #root {
   width: 100%;
-  height: 103vh;
+  height: inherit;
   border-radius: 10px;
   background: linear-gradient(
     190deg,
     #fff 29.96%,
     #ebf5ff 59.89%,
-    #f6fbff 96.86%
+    #ffffff59 96.86%
   );
 }
 
@@ -41,13 +41,13 @@ code {
   font-weight: 400;
   line-height: normal;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 1px;
   width: 92%;
 }
 #contentContainer {
   box-sizing: border-box;
-  height: 14vh;
-  padding-top: 8px;
+  height: 4vh;
+  padding-left: 13px;
   width: 92%;
 }
 #btnContainer {
@@ -65,7 +65,7 @@ code {
   font-family: "IBM Plex Sans KR";
   font-size: 14px;
   font-style: normal;
-  font-weight: bold;
+
   line-height: normal;
 }
 #ctn_1_btn:hover {
@@ -73,8 +73,8 @@ code {
   color: white;
 }
 #ctn_2_btn {
-  width: 106px;
-  height: 40px;
+  width: 45%;
+  height: 36px;
   font-family: "IBM Plex Sans KR";
   font-size: 15px;
   font-style: normal;
@@ -92,7 +92,10 @@ code {
 .main_nav {
   width: 100%;
   display: flex;
-  justify-content: center;
+  position: fixed;
+  justify-content: space-evenly;
+  margin-top: 3%;
+  bottom: 12px;
 }
 #PhotoContainer {
   display: flex;
@@ -109,10 +112,10 @@ code {
   line-height: normal;
   box-sizing: border-box;
   padding: 5px;
-  width: 92%;
+  width: 94%;
   justify-content: center;
   align-items: center;
-  height: 84%;
+  height: 91%;
 }
 
 .imageClick {
@@ -149,4 +152,27 @@ code {
   border-radius: 10px;
   margin-left: 0px;
   margin-top: 5%;
+}
+#login_barButton {
+  margin-bottom: 21%;
+  width: 83%;
+}
+#header_icon_back {
+  margin: 0px;
+  margin-right: 9%;
+  margin-left: 6%;
+  font-size: small;
+  color: #c5986b;
+}
+.main_header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#chooseFoodCat_Btn {
+  width: 86%;
+  margin-top: 5%;
+  height: 9%;
+  font-size: 14pt;
+  letter-spacing: 1px;
 }

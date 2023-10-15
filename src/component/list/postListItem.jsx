@@ -29,7 +29,7 @@ const Container = styled.div`
   height: auto;
 `;
 const TitleText = styled.p`
-  color: #000;
+  color: #3b3b3b;
   font-family: "IBM Plex Sans KR";
   font-size: 17px;
   font-style: normal;
@@ -39,6 +39,7 @@ const TitleText = styled.p`
   padding-left: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
+  letter-spacing: 1.5px;
 `;
 const TitleSubText = styled.span`
   box-sizing: border-box;
@@ -58,9 +59,8 @@ const Content = styled.p`
   font-weight: 400;
   line-height: normal;
   box-sizing: border-box;
-  padding: 9px;
   margin: 0px;
-  padding-left: 20px;
+  padding-left: 18px;
   padding-right: 18px;
 `;
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 //import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import Header from "../ui/header";
 
 /**
@@ -16,9 +17,9 @@ const foodlist = [
   "샌드위치",
   "닭발",
 ];
-function MainHeader() {
+function MainHeader(props) {
   const [index, setIndex] = useState(0);
-
+  const navigate = useNavigate();
   //const [food, setFood] = useState(foodlist[count]);
   // 음식 list index 1씩 증가
   function upIndex() {
@@ -40,7 +41,17 @@ function MainHeader() {
 
   // header에 음식이 계속 바뀜
   const Food = foodlist[index];
+  const { onClick, src, title } = props;
 
-  return <Header span={Food + " 먹기 딱 좋은 날"} />;
+  return (
+    <Header
+      src={src}
+      onClick={onClick}
+      Class="main_header"
+      title={title}
+      btnId="header_icon_back"
+      span={Food + " 먹기 딱 좋은 날"}
+    />
+  );
 }
 export default MainHeader;
