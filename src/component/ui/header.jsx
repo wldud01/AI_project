@@ -14,13 +14,17 @@ import IconBtn from "../ui/iconButton";
  *  MainSubText는 날짜 아래 바뀌는 text
  */
 
-const MainTitleText = styled.p`
+const MainTitleText = styled.div`
   font-size: 17px;
   font-weight: 700;
   width: 100%;
   text-align: center;
   margin-top: 13px;
   margin-bottom: 1px;
+`;
+const ScheduleHead = styled.div`
+  display: flex;
+  width: 67%;
 `;
 const MainHeader = styled.div`
   width: 100%;
@@ -44,6 +48,7 @@ const MainSubText = styled.p`
   color: #b5b3b3;
   margin: 0px;
 `;
+
 const StyledImage = styled.img`
   width: 16px;
   height: 18px;
@@ -71,8 +76,14 @@ function Header(props) {
         ) : (
           <IconBtn src={true} id={btnId} title={""} onClick={onClick} />
         )}
-        <StyledImage src={Calendar} alt="Styled Image" />
-        <Clock format={"ddd, MMM Do, YYYY"} ticking={false} timezone={"Rok"} />
+        <ScheduleHead>
+          <StyledImage src={Calendar} alt="Styled Image" />
+          <Clock
+            format={"ddd, MMM Do, YYYY"}
+            ticking={false}
+            timezone={"Rok"}
+          />
+        </ScheduleHead>
       </MainTitleText>
       <MainSubText>{span || ""}</MainSubText>
     </MainHeader>

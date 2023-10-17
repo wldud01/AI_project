@@ -60,7 +60,6 @@ const Content = styled.p`
   line-height: normal;
   box-sizing: border-box;
   margin: 0px;
-  padding-left: 18px;
   padding-right: 18px;
 `;
 

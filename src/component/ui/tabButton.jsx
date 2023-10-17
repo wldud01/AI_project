@@ -3,29 +3,35 @@ import styled from "styled-components";
 // 버튼 껍데기 ㄴ만들기
 const StyledButton = styled.div`
   padding: 1px;
-  width: 21%;
-  height: 85%;
+  height: 30px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #6f7071;
-  background: #634444;
+  justify-content: space-evenly;
   cursor: pointer;
-  font-size: 15px;
+  margin-right: 2.5%;
+  margin-bottom: 2.5%;
   border-radius: 18px;
-  border: 1px solid #acacac;
   background: #fff;
-  &:hover {
-    color: #689dff;
-    border: 1px solid #689dff;
-  }
+  font-family: IBM Plex Sans KR;
+  font-size: 13px;
+  font-weight: 700;
+  padding-left: 5px;
+  padding-right: 5px;
 `;
 
 function tabButton(props) {
-  const { title, onClick, btnid } = props;
+  const { title, onClick, btnid, className } = props;
+  const buttonWidth = title
+    ? `${Math.min(Math.max(title.length * 10, 48), 150)}px`
+    : "48px";
 
   return (
-    <StyledButton onClick={onClick} id={btnid}>
+    <StyledButton
+      className={className}
+      onClick={onClick}
+      id={btnid}
+      style={{ width: buttonWidth }}
+    >
       {title || "button"}
     </StyledButton>
   );

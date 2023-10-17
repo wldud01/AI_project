@@ -6,10 +6,12 @@ import MainPage from "./component/page/mainPage";
 
 import Photoshare from "./component/page/photoShare";
 import Receiptshare from "./component/page/ReceiptShare";
-import PickInput from "./component/page/writePhotoPostPage";
+import WritePhotoPost from "./component/page/writePhotoPostPage";
 import LoginPage from "./component/page/loginPage";
 import VideoPage from "./component/page/videoPage";
 import NamingPage from "./component/page/namingPage";
+import MyPage from "./component/page/myPage";
+import RecommandInput from "./component/page/RecommandInputPage";
 
 function App() {
   return (
@@ -21,8 +23,10 @@ function App() {
         <Route path="share/" element={<Photoshare />} />
         <Route path=":path/setName/" element={<NamingPage />} />
         <Route path="receipt/" element={<Receiptshare />} />
+        <Route path="recommandInput/" element={<RecommandInput />} />
+        <Route path="mypage/" element={<MyPage />} />
         <Route path="/youtube/" element={<VideoPage />} />
-        <Route path=":path/input/" element={<PickInput />} />
+        <Route path=":path/write%post" element={<WritePhotoPost />} />
       </Routes>
     </BrowserRouter>
   );

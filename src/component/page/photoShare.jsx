@@ -6,6 +6,7 @@ import ContentBox from "../list/photoList";
 import Navi from "../list/nav";
 import data from "../../data.json";
 import Header from "../list/mainHead";
+import PostBoxList from "../list/PostBoxList";
 
 import Back from "./image/Back.png";
 
@@ -29,7 +30,7 @@ const Wrapper = styled.div`
 const BestContentWrapper = styled.div`
   border-radius: 1px;
   width: 100%;
-  height: 59%;
+  height: 58%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +42,6 @@ const BestContentWrapper = styled.div`
   );
   filter: blur(1px);
   position: relative;
-  margin-bottom: 8%;
 `;
 
 // button contents에 감싸는 container
@@ -51,6 +51,31 @@ const Container = styled.div`
   max-width: 45rem;
 `;
 
+const ButtonWrap = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 14%;
+  align-items: center;
+
+  flex-direction: column;
+`;
+const Buttons = styled.div`
+  display: flex;
+  width: 90%;
+  height: 53%;
+  justify-content: center;
+`;
+const Text = styled.span`
+  display: flex;
+  font-size: 16px;
+  width: 83%;
+  height: 47%;
+  justify-content: end;
+  align-items: center;
+  color: #545454;
+  font-weight: 700;
+`;
 // mainpage body에 해당하는 부분
 function photoShare(props) {
   const {} = props;
@@ -65,6 +90,17 @@ function photoShare(props) {
           <BestContentWrapper>
             <Container />
           </BestContentWrapper>
+          <ButtonWrap>
+            <Text onClick={() => navigate("/receipt/write%post")}>
+              {"🙋 글쓰기"}
+            </Text>
+            <Buttons>
+              <PostBoxList
+                id="receiptSharepage_cat"
+                list={["한식", "양식", "중식", "일식"]}
+              />
+            </Buttons>
+          </ButtonWrap>
           <ContentBox post={data} />
         </Container>
         <Container />

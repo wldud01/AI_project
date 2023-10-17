@@ -107,7 +107,7 @@ function namingPage(props) {
         <Loading />
       ) : (
         <div>
-          <Header src={logo} onClick={() => navigate(-1)} />
+          <Header src={logo} onClick={() => navigate("/")} />
           <Wrapper>
             <Container>
               <Liogin_title>

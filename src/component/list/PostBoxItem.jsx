@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const Title = styled.p`
@@ -9,39 +9,50 @@ const Title = styled.p`
   font-weight: 700;
   line-height: normal;
   margin: 0px;
+  margin-bottom: 2%;
 `;
 const Content = styled.div`
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   box-sizing: border-box;
-  /* padding-left: 2%; */
   color: #545454;
   font-family: IBM Plex Sans KR;
   font-size: 15px;
   font-weight: 400;
   line-height: normal;
   height: 44%;
-  width: 100%;
+  width: 93%;
 `;
 const Wrapper = styled.div`
   display: flex;
+  position: relative;
   align-items: flex-start;
   justify-content: center;
   width: 98%;
-  height: 17%;
+  height: auto;
   box-sizing: border-box;
   padding-left: 6%;
   flex-direction: column;
+  margin-top: 5%;
 `;
 
 function PostBox(props) {
-  const { title, content } = props;
+  const { title, content, itemId, contentHeight, WrapperHeight } = props;
 
   return (
-    <Wrapper>
+    <Wrapper
+      style={WrapperHeight ? { height: `${WrapperHeight}` } : { height: `17%` }}
+      id={itemId}
+    >
       <Title>{title || "제목을 입력해주세요"}</Title>
-      <Content>{content || "내용을 입력해주세요"}</Content>
+      <Content
+        style={
+          contentHeight ? { height: `${contentHeight}` } : { height: `44%` }
+        }
+      >
+        {content || "내용을 입력해주세요"}
+      </Content>
     </Wrapper>
   );
 }

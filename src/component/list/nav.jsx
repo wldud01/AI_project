@@ -17,7 +17,7 @@ const Nav = styled.div`
   justify-content: space-around;
   margin-top: 0.5vh;
   border-top: 1px solid #9c9c9c;
-  background: #ffffff26;
+  background: #ffffff4c;
   border-radius: 10px;
 `;
 function Navigator(props) {
@@ -52,7 +52,7 @@ function Navigator(props) {
         src={MyIcon}
         title="mypage"
         onClick={() => {
-          navigate("/");
+          navigate("/mypage");
         }}
       ></IconButton>
     </Nav>

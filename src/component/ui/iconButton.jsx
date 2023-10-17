@@ -8,7 +8,7 @@ import styled from "styled-components";
  */
 const StyledIconButton = styled.div`
   width: 50px;
-  height: 50px;
+  height: 34px;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -27,7 +27,6 @@ const StyledImage = styled.img`
 `;
 
 function IconButton(props) {
-  const navigate = useNavigate();
   const { title, onClick, id, src } = props;
 
   return (

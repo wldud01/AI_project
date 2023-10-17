@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap");
 
+/*기본*/
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "IBM Plex Sans KR", "Segoe UI",
@@ -19,42 +20,45 @@ body {
     #ffffff59 96.86%
   );
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-#contentBoxContainer_1 {
-  display: flex;
-  justify-content: center;
+/*header*/
+#header_icon_back {
+  margin: 0px;
+  /* margin-right: 9%; */
+  /* margin-left: 6%; */
+  font-size: small;
+  color: #c5986b;
+  box-sizing: border-box;
 }
+.main_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/*navigation*/
+.main_nav {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 3%;
+  height: 8%;
+  bottom: 12px;
+  background: #ffffffbd;
+}
+/*main page*/
+#contentBoxContainer_1,
 #contentBoxContainer_2 {
   display: flex;
   justify-content: center;
 }
 
-#textContainer {
-  color: #545454;
-  font-family: "IBM Plex Sans KR";
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  box-sizing: border-box;
-  padding: 1px;
-  width: 92%;
-}
-#contentContainer {
-  box-sizing: border-box;
-  height: 4vh;
-  padding-left: 13px;
-  width: 92%;
-}
-#btnContainer {
-  justify-content: center;
-  align-items: center;
-  height: 5vh;
-}
+/*main page - button*/
 #ctn_1_btn {
   width: 46%;
   height: 90%;
@@ -89,13 +93,58 @@ code {
   background: #ffffff;
   color: #0063f8;
 }
-.main_nav {
-  width: 100%;
-  display: flex;
-  position: fixed;
-  justify-content: space-evenly;
-  margin-top: 3%;
-  bottom: 12px;
+/*my page*/
+#mypage_contentBox_1 {
+  height: 21%;
+}
+#mypage_contentBox_2 {
+  height: 68%;
+}
+#mypage_nickname {
+  height: 94%;
+  /* background: white; */
+  font-size: 17px;
+  box-sizing: border-box;
+  padding-left: 33px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-left: 0px;
+  justify-content: start;
+  margin-top: 8%;
+}
+#mypage_content {
+  width: 99%;
+  margin: 0px;
+  background: transparent;
+  justify-content: start;
+  box-sizing: border-box;
+  padding-left: 9%;
+  font-size: 17px;
+  margin-top: 6%;
+}
+
+/*Container*/
+#textContainer {
+  color: #545454;
+  font-family: "IBM Plex Sans KR";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  box-sizing: border-box;
+  padding: 1px;
+  width: 92%;
+}
+#contentContainer {
+  box-sizing: border-box;
+  height: 4vh;
+  padding-left: 13px;
+  width: 92%;
+}
+#btnContainer {
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
 }
 #PhotoContainer {
   display: flex;
@@ -103,6 +152,7 @@ code {
   flex-flow: wrap;
   height: inherit;
 }
+
 #FoodReceipt {
   color: #545454;
   font-family: "IBM Plex Sans KR";
@@ -125,6 +175,7 @@ code {
   box-shadow: -2px -2px 17px 1px #689dff;
 }
 
+/*input back and forward button*/
 #inputBtnBack {
   width: 107px;
   height: 38px;
@@ -153,26 +204,57 @@ code {
   margin-left: 0px;
   margin-top: 5%;
 }
+
+/*login bar button*/
 #login_barButton {
   margin-bottom: 21%;
   width: 83%;
 }
-#header_icon_back {
-  margin: 0px;
-  margin-right: 9%;
-  margin-left: 6%;
-  font-size: small;
-  color: #c5986b;
-}
-.main_header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
+
 #chooseFoodCat_Btn {
   width: 86%;
   margin-top: 5%;
-  height: 9%;
+  height: 98%;
   font-size: 14pt;
   letter-spacing: 1px;
+}
+#selected {
+  color: #06f;
+}
+.ReceiptShare_div {
+  display: flex;
+  justify-content: center;
+}
+
+/*recommandinputpage - btn*/
+#recommandInputpage_factor {
+  height: 55%;
+}
+#receiptSharepage_cat {
+  justify-content: space-evenly;
+}
+
+/*tab btn*/
+.tab_btn_clicked {
+  color: #0063f8;
+  border: 1px solid #0063f8;
+}
+.tab_btn {
+  color: #545454;
+  border: 1px solid #545454;
+}
+
+/*recommandinputpage - slider*/
+.rc-slider-rail {
+  height: 2px;
+}
+.rc-slider-handle {
+  background-color: #06f;
+  border: 0px;
+  touch-action: none;
+  filter: drop-shadow(0px 4px 9px rgba(0, 0, 0, 0.25));
+}
+.rc-slider-track,
+.rc-slider-tracks {
+  background-color: hsla(216, 100%, 49%, 0.327);
 }

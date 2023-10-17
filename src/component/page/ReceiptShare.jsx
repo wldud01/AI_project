@@ -6,8 +6,9 @@ import ContentBox from "../list/ReceiptList";
 import Navi from "../list/nav";
 import data from "../../data.json";
 import Header from "../list/mainHead";
-import TabBtn from "../ui/tabButton";
 import Back from "./image/Back.png";
+import PostBoxList from "../list/PostBoxList";
+
 /**
  * photo Share page
  *  사용자들이 잘 찍었다고 생각하는 사진들을 공유하는 공간
@@ -17,7 +18,7 @@ import Back from "./image/Back.png";
 const BestContentWrapper = styled.div`
   border-radius: 1px;
   width: 100%;
-  height: 59%;
+  height: 58%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,13 +46,30 @@ const Container = styled.div`
   height: inherit;
   max-width: 45rem;
 `;
-const TabBtns = styled.div`
-  width: 100%;
-  height: 13%;
-  max-width: 45rem;
-  /* margin-top: 5%; */
+const ButtonWrap = styled.div`
   display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 17%;
   align-items: center;
+
+  flex-direction: column;
+`;
+const Buttons = styled.div`
+  display: flex;
+  width: 90%;
+  height: 37%;
+  justify-content: center;
+`;
+const Text = styled.span`
+  display: flex;
+  font-size: 16px;
+  width: 85%;
+  height: 46%;
+  justify-content: end;
+  align-items: center;
+  color: #545454;
+  font-weight: 700;
 `;
 
 // mainpage body에 해당하는 부분
@@ -61,21 +79,29 @@ function photoShare(props) {
   const navigate = useNavigate(); // route를 사용하기 위해서 useNavigator를 보면
   // 그리고 버튼을 눌렀을 때 경로를 설정해 두고 만약 아이디마다 다른 값을 두고 싶다면 파라미터를 이용하자!
   return (
-    <div>
+    <div className="ReceiptShare_div">
       <Header src={Back} onClick={() => navigate(-1)} />
       <Wrapper>
         <Container>
           <BestContentWrapper>
             <Container />
           </BestContentWrapper>
-          <TabBtns>
-            <TabBtn />
-          </TabBtns>
+          <ButtonWrap>
+            <Text onClick={() => navigate("/receipt/write%post")}>
+              {"🙋 글쓰기"}
+            </Text>
+            <Buttons>
+              <PostBoxList
+                id="receiptSharepage_cat"
+                list={["한식", "양식", "중식", "일식"]}
+              />
+            </Buttons>
+          </ButtonWrap>
           <ContentBox post={data} />
         </Container>
         <Container />
       </Wrapper>
-      <div class="main_nav">
+      <div className="main_nav">
         <Navi />
       </div>
     </div>

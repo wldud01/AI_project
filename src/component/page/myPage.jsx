@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 //list
-import ContentBox from "../list/postListItem";
+import ContentBox from "../list/ContentBox";
 import Navi from "../list/nav";
 import Header from "../list/mainHead";
 //ui
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 31%;
+  padding-top: 28%;
   //justify-content: center;
 `;
 
@@ -33,16 +33,19 @@ const Container = styled.div`
   height: 30%;
   max-width: 45rem;
   margin-top: 4%;
+  display: flex;
   align-items: center;
+  justify-content: center;
   :hover {
     background: #f4f8fe;
   }
 `;
-const FileSelectBtn = styled.input`
-  display: flex;
-  width: 30%;
-  position: relative;
-  color: white;
+const Text = styled.span`
+  position: absolute;
+  font-family: "IBM Plex Sans KR";
+  font-size: 18px;
+  font-weight: 700;
+  color: green;
 `;
 const Space = styled.div`
   width: 100%;
@@ -51,13 +54,13 @@ const Space = styled.div`
   margin-top: 5%;
 `;
 
-function MainPage(props) {
-  const {} = props;
+function myPage(props) {
+  const { Image } = props;
   const [loading, setLoading] = useState(true);
 
   //데이터 불러오면서 걸리는 시간
   const fetchData = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 300));
   };
   useEffect(() => {
     fetchData().then(() => {
@@ -75,40 +78,14 @@ function MainPage(props) {
         <div>
           <Header src={logo} onClick={() => navigate("/")} />
           <Wrapper>
-            <Container id="contentBoxContainer_1">
-              <ContentBox
-                text="🍴오늘 뭐먹지?"
-                subtext="How to use this app?"
-                content="음식을 취향에 맞게 추천해드립니다. "
-                btnName="추천 받아보기"
-                btnid="ctn_1_btn"
-                onClick={() => {
-                  navigate("/recommandInput");
-                }}
-              />
+            <Container id="mypage_contentBox_1">
+              <ContentBox contentName={["로그인"]} btnid="mypage_nickname" />
+              <Text>🌱 냠냠 새싹</Text>
             </Container>
-            <Container id="contentBoxContainer_1">
+            <Container id="mypage_contentBox_2">
               <ContentBox
-                text="오늘 먹은 음식의 영양소는?"
-                subtext="오늘 먹은 칼로리가 몇이더라.."
-                content=" "
-                btnName="사진 고르기"
-                btnid="ctn_1_btn"
-                onClick={() => {
-                  <FileSelectBtn />;
-                }}
-              />
-            </Container>
-            <Container id="contentBoxContainer_2">
-              <ContentBox
-                text="숨은 맛집을 공유해주세요!"
-                subtext="여러분의 숨은 맛집은?"
-                content=" "
-                btnName="공유하기"
-                btnid="ctn_2_btn"
-                onClick={() => {
-                  navigate("/share");
-                }}
+                contentName={["내가 올린 컨텐츠", "설정", "고객센터"]}
+                btnid="mypage_content"
               />
             </Container>
           </Wrapper>
@@ -121,4 +98,4 @@ function MainPage(props) {
     </div>
   );
 }
-export default MainPage;
+export default myPage;
