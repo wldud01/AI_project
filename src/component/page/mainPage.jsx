@@ -9,7 +9,7 @@ import Header from "../list/mainHead";
 import Loading from "./loadingPage";
 // DB or api 임시방편
 import data from "../../data.json";
-import logo from "./image/logo.png";
+import logo from "./image/logo.svg";
 
 /**
  * Main page body부분에 해당
@@ -73,7 +73,7 @@ function MainPage(props) {
         <Loading />
       ) : (
         <div>
-          <Header src={logo} onClick={() => navigate("/")} />
+          <Header srcFront={logo} onClick={() => navigate("/")} />
           <Wrapper>
             <Container id="contentBoxContainer_1">
               <ContentBox

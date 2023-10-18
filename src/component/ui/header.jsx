@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Clock from "react-live-clock";
-import Calendar from "./Calendar.png";
+import Calendar from "./Calendar_.svg";
 
 //ui
 import IconBtn from "../ui/iconButton";
@@ -24,7 +24,8 @@ const MainTitleText = styled.div`
 `;
 const ScheduleHead = styled.div`
   display: flex;
-  width: 67%;
+  width: 52%;
+  justify-content: center;
 `;
 const MainHeader = styled.div`
   width: 100%;
@@ -57,25 +58,18 @@ const StyledImage = styled.img`
 
 function Header(props) {
   const navigate = useNavigate();
-  const [icon, setIcon] = useState(true);
-  const { src, span, Class, btnId, title, onClick } = props;
-
-  const updateIconBtn = () => {
-    if (src === "0") {
-      useEffect(() => {
-        setIcon(false);
-      });
-    }
-  };
+  const { srcFront, srcBack, span, Class, btnId, title, onClick } = props;
 
   return (
     <MainHeader>
       <MainTitleText className={Class}>
-        {icon ? (
-          <IconBtn src={src} id={btnId} title={title} onClick={onClick} />
-        ) : (
-          <IconBtn src={true} id={btnId} title={""} onClick={onClick} />
-        )}
+        <IconBtn
+          src={srcFront || ""}
+          btnId={btnId}
+          title={title}
+          onClick={onClick}
+        />
+
         <ScheduleHead>
           <StyledImage src={Calendar} alt="Styled Image" />
           <Clock
@@ -84,6 +78,13 @@ function Header(props) {
             timezone={"Rok"}
           />
         </ScheduleHead>
+
+        <IconBtn
+          src={srcBack || ""}
+          btnId={btnId}
+          title={title}
+          onClick={onClick}
+        />
       </MainTitleText>
       <MainSubText>{span || ""}</MainSubText>
     </MainHeader>

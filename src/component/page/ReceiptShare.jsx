@@ -6,7 +6,7 @@ import ContentBox from "../list/ReceiptList";
 import Navi from "../list/nav";
 import data from "../../data.json";
 import Header from "../list/mainHead";
-import Back from "./image/Back.png";
+import Back from "./image/Back.svg";
 import PostBoxList from "../list/PostBoxList";
 
 /**
@@ -50,26 +50,28 @@ const ButtonWrap = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  height: 17%;
+  height: auto;
   align-items: center;
-
   flex-direction: column;
+  margin-bottom: 1%;
 `;
 const Buttons = styled.div`
   display: flex;
   width: 90%;
-  height: 37%;
+  height: auto;
   justify-content: center;
 `;
 const Text = styled.span`
   display: flex;
   font-size: 16px;
   width: 85%;
-  height: 46%;
+  height: auto;
   justify-content: end;
   align-items: center;
   color: #545454;
   font-weight: 700;
+  padding-top: 2%;
+  padding-bottom: 2%;
 `;
 
 // mainpage body에 해당하는 부분
@@ -80,7 +82,11 @@ function photoShare(props) {
   // 그리고 버튼을 눌렀을 때 경로를 설정해 두고 만약 아이디마다 다른 값을 두고 싶다면 파라미터를 이용하자!
   return (
     <div className="ReceiptShare_div">
-      <Header src={Back} onClick={() => navigate(-1)} />
+      <Header
+        srcFront={Back}
+        btnId={"header_icon_back"}
+        onClick={() => navigate(-1)}
+      />
       <Wrapper>
         <Container>
           <BestContentWrapper>

@@ -24,6 +24,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 /*header*/
 #header_icon_back {
   margin: 0px;
@@ -47,14 +48,17 @@ code {
   justify-content: space-evenly;
   align-items: center;
   margin-top: 3%;
-  height: 8%;
+  height: 9%;
   bottom: 12px;
   background: #ffffffbd;
 }
-.Nav_btn::selection {
+.Nav_btn {
+  background: none;
+}
+.Nav_btn_clicked {
   background: #b9d8ff73;
   border-radius: 10px;
-  filter: drop-shadow(3px 5px 14px gray);
+  filter: drop-shadow(3px 5px 14px lightgray);
 }
 /*main page*/
 #contentBoxContainer_1,
@@ -242,11 +246,12 @@ code {
 /*tab btn*/
 .tab_btn_clicked {
   color: #0063f8;
-  border: 1px solid #0063f8;
+  border: 2px solid #6ba6ff;
+  font-weight: 700;
 }
 .tab_btn {
   color: #545454;
-  border: 1px solid #545454;
+  border: 1px solid lightgray;
 }
 
 /*recommandinputpage - slider*/
@@ -262,4 +267,8 @@ code {
 .rc-slider-track,
 .rc-slider-tracks {
   background-color: hsla(216, 100%, 49%, 0.327);
+}
+/*보이거나 없애는 경우 - 맨 마지막 위치할 것 반드시*/
+#None {
+  display: none;
 }

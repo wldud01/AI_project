@@ -41,15 +41,16 @@ function MainHeader(props) {
 
   // header에 음식이 계속 바뀜
   const Food = foodlist[index];
-  const { onClick, src, title } = props;
+  const { onClick, srcFront, srcBack, title, btnId } = props;
 
   return (
     <Header
-      src={src}
+      srcFront={srcFront}
+      srcBack={srcBack}
       onClick={onClick}
       Class="main_header"
       title={title}
-      btnId="header_icon_back"
+      btnId={btnId}
       span={Food + " 먹기 딱 좋은 날"}
     />
   );

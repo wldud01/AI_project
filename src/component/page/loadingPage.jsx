@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import meat from "./image/meat.png";
-import egg from "./image/eggplant.png";
-import carrot from "./image/carrot.png";
-import burger from "./image/burger.png";
-import taco from "./image/taco.png";
-import sushi from "./image/sushi.png";
-import logo from "./image/logo.png";
+import meat from "./image/meat.svg";
+import egg from "./image/eggplant.svg";
+import carrot from "./image/carrot.svg";
+import burger from "./image/burger.svg";
+import taco from "./image/taco.svg";
+import sushi from "./image/sushi.svg";
+import logo from "./image/logo.svg";
 import Header from "../list/mainHead";
 
 // food random list
@@ -81,7 +81,7 @@ function LoadingPage(props) {
   // 그리고 버튼을 눌렀을 때 경로를 설정해 두고 만약 아이디마다 다른 값을 두고 싶다면 파라미터를 이용하자!
   return (
     <div>
-      <Header src={logo} />
+      <Header srcFront={logo} />
       <Wrapper>
         <Container>
           <BackImg src={Food} />

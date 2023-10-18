@@ -9,7 +9,7 @@ import PostBoxList from "../list/PostBoxList";
 //ui
 // DB or api 임시방편
 import data from "../../data.json";
-import Back from "./image/Back.png";
+import Back from "./image/Back.svg";
 import BarButton from "../ui/barButton";
 // header 아래 body 부분을 감싸는 wapper
 const Wrapper = styled.div`
@@ -125,7 +125,11 @@ function MainPageInput(props) {
   return (
     <div>
       <div>
-        <Header src={Back} onClick={() => navigate(-1)} />
+        <Header
+          srcFront={Back}
+          btnId={"header_icon_back"}
+          onClick={() => navigate(-1)}
+        />
         <Wrapper>
           <Container>
             <FileWrapper>

@@ -17,12 +17,17 @@ const StyledButton = styled.div`
   font-weight: 700;
   padding-left: 5px;
   padding-right: 5px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 function tabButton(props) {
   const { title, onClick, btnid, className } = props;
   const buttonWidth = title
-    ? `${Math.min(Math.max(title.length * 10, 48), 150)}px`
+    ? `${Math.min(Math.max(title.length * 15, 48), 150)}px`
     : "48px";
 
   return (

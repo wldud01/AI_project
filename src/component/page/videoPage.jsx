@@ -5,15 +5,13 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 //list
-import ContentBox from "../list/postListItem";
 import Navi from "../list/nav";
 import Header from "../list/mainHead";
 //ui
 import Loading from "./loadingPage";
-import Button from "../ui/button";
 // DB or api 임시방편
 import data from "../../data.json";
-import Back from "./image/Back.png";
+import Back from "./image/Back.svg";
 // header 아래 body 부분을 감싸는 wapper
 const Wrapper = styled.div`
   width: 100%;
@@ -67,7 +65,11 @@ function VideoPage(props) {
         <Loading />
       ) : (
         <div>
-          <Header src={Back} onClick={() => navigate(-1)} />
+          <Header
+            srcFront={Back}
+            btnId={"header_icon_back"}
+            onClick={() => navigate(-1)}
+          />
           <Wrapper>
             <Carousel showArrows={true}>
               <div>

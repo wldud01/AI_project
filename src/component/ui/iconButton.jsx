@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -20,18 +20,18 @@ const StyledImage = styled.img`
   width: 23px;
   height: 25px;
   cursor: pointer;
-  &:focus {
-    border-radius: 26%;
-    box-shadow: -2px -2px 17px 1px #689dff;
-  }
+`;
+const None = styled.div`
+  display: flex;
+  width: 11%;
 `;
 
 function IconButton(props) {
-  const { title, onClick, id, src, className } = props;
+  const { title, onClick, btnid, src, className, button } = props;
 
   return (
-    <StyledIconButton className={className} onClick={onClick} id={id}>
-      <StyledImage src={src} alt="Styled Image" />
+    <StyledIconButton className={className} onClick={onClick} id={btnid}>
+      {src !== "" ? <StyledImage src={src} alt="Styled Image" /> : <None />}
       {title || ""}
     </StyledIconButton>
   );

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 // icon image
-import HomeIcon from "./image/HomeIcon.png";
-import MyIcon from "./image/MyIcon.png";
-import PopularIcon from "./image/PopularIcon.png";
-import ShareIcon from "./image/ShareIcon.png";
+import Home from "./image/Home.svg";
+import Mypage from "./image/MyIcon.svg";
+import Share from "./image/PopularIcon.svg";
+import Receipt from "./image/ShareIcon.svg";
 import IconButton from "../ui/iconButton";
 
 const Nav = styled.div`
@@ -22,45 +22,36 @@ const Nav = styled.div`
 `;
 function Navigator(props) {
   const {} = props;
-  const [btn, setBtn] = useState(false);
-
+  const button_name = ["home", "share", "receipt", "mypage"];
+  const [button, setButton] = useState(button_name);
+  const [selectedBtn, setSelectedBtn] = useState([]);
   const navigate = useNavigate(); // route를 사용하기 위해서 useNavigator를 보면
   // 그리고 버튼을 눌렀을 때 경로를 설정해 두고 만약 아이디마다 다른 값을 두고 싶다면 파라미터를 이용하자!
+
+  const handdletSrc = (Btn) => {
+    if (Btn === "home") return Home;
+    else if (Btn === "share") return Share;
+    else if (Btn === "receipt") return Receipt;
+    else if (Btn === "mypage") return Mypage;
+  };
+  console.log(selectedBtn);
+
   return (
     <Nav>
-      <IconButton
-        className={"Nav_btn"}
-        src={HomeIcon}
-        title="home"
-        onClick={() => {
-          navigate("/");
-          setBtn(true);
-        }}
-      ></IconButton>
-      <IconButton
-        className="Nav_btn"
-        src={ShareIcon}
-        title="share"
-        onClick={() => {
-          navigate("/share/");
-        }}
-      ></IconButton>
-      <IconButton
-        className="Nav_btn"
-        src={PopularIcon}
-        title="receipt"
-        onClick={() => {
-          navigate("/receipt/");
-        }}
-      ></IconButton>
-      <IconButton
-        className="Nav_btn"
-        src={MyIcon}
-        title="mypage"
-        onClick={() => {
-          navigate("/mypage");
-        }}
-      ></IconButton>
+      {button.map((b, index) => {
+        return (
+          <IconButton
+            className={selectedBtn.includes(b) ? "Nav_btn_clicked" : "Nav_btn"}
+            key={b}
+            onClick={() => {
+              navigate("/" + b);
+              setSelectedBtn((selectedBtn) => [b]);
+            }}
+            src={handdletSrc(b)}
+            title={b}
+          />
+        );
+      })}
     </Nav>
   );
 }

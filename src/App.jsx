@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<MainPage />} />
-        <Route path="/main/" element={<MainPage />} />
+        <Route path="/home" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="share/" element={<Photoshare />} />
         <Route path=":path/setName/" element={<NamingPage />} />

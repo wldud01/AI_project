@@ -11,7 +11,7 @@ import BarButton from "../ui/barButton";
 // page
 import Loading from "./loadingPage";
 // DB or api 임시방편
-import logo from "./image/logo.png";
+import logo from "./image/logo.svg";
 import data from "../../data.json";
 
 /**
@@ -107,7 +107,7 @@ function namingPage(props) {
         <Loading />
       ) : (
         <div>
-          <Header src={logo} onClick={() => navigate("/")} />
+          <Header srcFront={logo} onClick={() => navigate("/")} />
           <Wrapper>
             <Container>
               <Liogin_title>
