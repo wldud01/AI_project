@@ -27,10 +27,10 @@ const StyledImage = styled.img`
 `;
 
 function IconButton(props) {
-  const { title, onClick, id, src } = props;
+  const { title, onClick, id, src, className } = props;
 
   return (
-    <StyledIconButton onClick={onClick} id={id}>
+    <StyledIconButton className={className} onClick={onClick} id={id}>
       <StyledImage src={src} alt="Styled Image" />
       {title || ""}
     </StyledIconButton>

@@ -17,24 +17,28 @@ const Nav = styled.div`
   justify-content: space-around;
   margin-top: 0.5vh;
   border-top: 1px solid #9c9c9c;
-  background: #ffffff4c;
+  background: #ffffff26;
   border-radius: 10px;
 `;
 function Navigator(props) {
   const {} = props;
+  const [btn, setBtn] = useState(false);
 
   const navigate = useNavigate(); // route를 사용하기 위해서 useNavigator를 보면
   // 그리고 버튼을 눌렀을 때 경로를 설정해 두고 만약 아이디마다 다른 값을 두고 싶다면 파라미터를 이용하자!
   return (
     <Nav>
       <IconButton
+        className={"Nav_btn"}
         src={HomeIcon}
         title="home"
         onClick={() => {
           navigate("/");
+          setBtn(true);
         }}
       ></IconButton>
       <IconButton
+        className="Nav_btn"
         src={ShareIcon}
         title="share"
         onClick={() => {
@@ -42,6 +46,7 @@ function Navigator(props) {
         }}
       ></IconButton>
       <IconButton
+        className="Nav_btn"
         src={PopularIcon}
         title="receipt"
         onClick={() => {
@@ -49,6 +54,7 @@ function Navigator(props) {
         }}
       ></IconButton>
       <IconButton
+        className="Nav_btn"
         src={MyIcon}
         title="mypage"
         onClick={() => {

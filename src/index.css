@@ -51,6 +51,11 @@ code {
   bottom: 12px;
   background: #ffffffbd;
 }
+.Nav_btn::selection {
+  background: #b9d8ff73;
+  border-radius: 10px;
+  filter: drop-shadow(3px 5px 14px gray);
+}
 /*main page*/
 #contentBoxContainer_1,
 #contentBoxContainer_2 {
