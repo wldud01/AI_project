@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="91179f88-46d6-458b-906d-6d992b1bcf37" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/FoodForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/FoodFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/Content.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/ContentVote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/FoodRecInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/FoodRecInputRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/JpaFoodRecInputRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/service/FoodRecInputService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/recommend/FoodRecResult.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/recommend/createFoodForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/test/java/hello/demo/service/FoodRecInputServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/demo/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/aop/TimeTraceAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/aop/TimeTraceAop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/MemberForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/MemberForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/JdbcTemplateMemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/JpaMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/JpaMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/MemoryMemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/members/createMemberForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/members/createMemberForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/hello/demo/repository/MemoryMemberRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/hello/demo/service/MemberServiceIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/hello/demo/service/MemberServiceIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/hello/demo/service/MemberServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/hello/demo/service/MemberServiceTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/demo">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/demo">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2WwD5CM39JKqEzzAdrYEBDXRkQP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/0106y/demo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "terminal",
+    "spring.configuration.checksum": "91a1812bde161b9643cecd86afec0795",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="hello.demo.service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="hello.demo.domain" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.DemoApplication (2)">
+    <configuration name="demo [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/demo" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="FoodRecInputServiceTest.saveInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hello.demo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.demo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="hello.demo.service.FoodRecInputServiceTest" />
+      <option name="METHOD_NAME" value="saveInput" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo.demo.test~1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.demo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="hello.demo.service.MemberServiceIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberServiceIntegrationTest.duplicate_member" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo.demo.test~1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.demo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="hello.demo.service.MemberServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="duplicate_member" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberServiceIntegrationTest.join" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo.demo.test~1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.demo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="hello.demo.service.MemberServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="join" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="demo.demo.main~1" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hello.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="hello.demo.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hello.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FoodRecInputServiceTest.saveInput" />
+        <item itemvalue="JUnit.MemberServiceIntegrationTest.join" />
+        <item itemvalue="JUnit.MemberServiceIntegrationTest.duplicate_member" />
+        <item itemvalue="JUnit.MemberServiceIntegrationTest" />
+        <item itemvalue="Gradle.demo [dependencies]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="91179f88-46d6-458b-906d-6d992b1bcf37" name="Changes" comment="" />
+      <created>1697634566462</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697634566462</updated>
+      <workItem from="1697634566730" duration="14497000" />
+      <workItem from="1697692126880" duration="3086000" />
+      <workItem from="1697759985260" duration="25293000" />
+      <workItem from="1697866775955" duration="26785000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
