@@ -1,0 +1,48 @@
+package hello.demo.repository;
+
+import hello.demo.domain.Member;
+import jakarta.persistence.EntityManager;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Optional;
+
+
+public class JpaMemberRepository implements MemberRepository {
+    private  final EntityManager em;
+    public JpaMemberRepository(EntityManager em){
+        this.em = em;
+    }
+    @Override
+    public Member save(Member member) {
+        em.persist(member);
+        return member;
+    }
+
+    @Override
+    public Optional<Member> findById(long id) {
+        Member member= em.find(Member.class,id);
+        return Optional.ofNullable(member);
+    }
+
+    @Override
+    public Optional<Member> findByName(String name) {
+      List<Member> result = em.createQuery("select m from Member as m where m.name= :name",Member.class)
+              .setParameter("name", name)
+              .getResultList();
+      return result.stream().findAny();
+    }
+
+    @Override
+    public Optional<Member> findByMbti(String mbti) {
+        return Optional.empty();
+    }
+
+    @Override
+    public List<Member> findAll() {
+        List<Member> result = em.createQuery("select  m from Member as  m",Member.class)
+                .getResultList();
+        return result;
+    }
+}
