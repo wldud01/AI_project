@@ -48,7 +48,6 @@ function ContentBox(props) {
             title={cat}
             content={cat}
             onClick={() => {
-              console.log(selectedContent);
               onClickedCat(cat);
             }}
           />

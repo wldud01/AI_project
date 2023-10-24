@@ -96,7 +96,7 @@ function photoShare(props) {
             <Container />
           </BestContentWrapper>
           <ButtonWrap>
-            <Text onClick={() => navigate("/receipt/write%post")}>
+            <Text onClick={() => navigate("/receipt/writepost")}>
               {"🙋 글쓰기"}
             </Text>
             <Buttons>

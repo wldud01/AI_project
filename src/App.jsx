@@ -26,7 +26,7 @@ function App() {
         <Route path="recommandInput/" element={<RecommandInput />} />
         <Route path="mypage/" element={<MyPage />} />
         <Route path="/youtube/" element={<VideoPage />} />
-        <Route path=":path/write%post" element={<WritePhotoPost />} />
+        <Route path=":path/writepost" element={<WritePhotoPost />} />
       </Routes>
     </BrowserRouter>
   );

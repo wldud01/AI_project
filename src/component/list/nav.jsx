@@ -34,7 +34,6 @@ function Navigator(props) {
     else if (Btn === "receipt") return Receipt;
     else if (Btn === "mypage") return Mypage;
   };
-  console.log(selectedBtn);
 
   return (
     <Nav>

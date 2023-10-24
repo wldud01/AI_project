@@ -6,11 +6,13 @@ import Navi from "../list/nav";
 import Header from "../list/mainHead";
 import PostBox from "../list/PostBoxItem";
 import PostBoxList from "../list/PostBoxList";
+import TabButton from "../ui/tabButton";
 //ui
 // DB or api 임시방편
 import data from "../../data.json";
 import Back from "./image/Back.svg";
 import BarButton from "../ui/barButton";
+import axios from "axios";
 // header 아래 body 부분을 감싸는 wapper
 const Wrapper = styled.div`
   width: 100%;
@@ -77,6 +79,16 @@ const ButtonWrap = styled.div`
   justify-content: space-between;
   height: 100%;
 `;
+const Buttondiv = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  width: 100%;
+  height: 97%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  /* padding-left: 6%; */
+`;
 const Space = styled.div`
   width: 100%;
   height: 85px;
@@ -97,13 +109,67 @@ function MainPageInput(props) {
   const [text, setText] = useState("");
   const [describe, setDescribe] = useState("");
   const [url, setURL] = useState("");
+  const [category, setCategory] = useState(["한식", "양식", "중식", "일식"]);
   //image
   const [selectedImage, setSelectedImage] = useState("");
-  const [clicked, setClicked] = useState(false);
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1; // 월은 0부터 시작하므로 1을 더해줍니다.
+  const day = now.getDate();
 
-  const handleButtonClick = () => {
-    setClicked(!clicked);
+  const [selectedCat, setSelectedCat] = useState([]);
+
+  //categorhy
+  const toggleCat = (cat) => {
+    if (selectedCat.includes(cat)) {
+      setSelectedCat(selectedCat.filter((c) => c !== cat));
+    } else {
+      setSelectedCat([...selectedCat, cat]);
+    }
   };
+  const navigate = useNavigate();
+
+  async function handleSummitClick() {
+    if (
+      text === "" ||
+      describe === "" ||
+      selectedImage === "" ||
+      selectedCat === ""
+    ) {
+      alert("모두 입력해주세요.");
+    } else {
+      // 전송할 데이터를 객체로 만들기
+      const data = {
+        authorId: "hello",
+        location: "서울특별시",
+        title: text,
+        text: describe,
+        fileUrl: "http://" + { selectedImage }, // 이미지 데이터 (base64 문자열 또는 이미지 URL로 변환된 데이터)
+        shareUrl: url,
+        category: selectedCat, // "한식", "양식", "중식", "일식" 중에서 선택된 값
+        createdDate: `${year}-${month}-${day}`,
+        voteCount: 0,
+      };
+      console.log(data);
+      // Spring Boot 서버의 엔드포인트 URL 설정
+      const Url = "http://localhost:8000/api/content/new"; // 원하는 엔드포인트 URL로 변경하세요
+
+      // 데이터를 Spring으로 전송
+      await axios
+        .post(Url, data, {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        })
+        .then((response) => {
+          console.log("Data sent successfully:", response.data);
+          // 데이터 전송 후 원하는 동작 수행
+        })
+        .catch((error) => {
+          console.error("Error sending data:", error);
+        });
+    }
+    navigate("/");
+  }
 
   const handleImageChange = (event) => {
     const file = event.target.files[0]; // 선택한 이미지 파일 가져오기
@@ -121,7 +187,6 @@ function MainPageInput(props) {
     }
   };
 
-  const navigate = useNavigate();
   return (
     <div>
       <div>
@@ -161,10 +226,23 @@ function MainPageInput(props) {
               title="종류"
               content={
                 <ButtonWrap>
-                  <PostBoxList
-                    onClick={handleButtonClick}
-                    list={["한식", "양식", "중식", "일식"]}
-                  />
+                  <Buttondiv>
+                    {category.map((cat, index) => (
+                      <TabButton
+                        className={
+                          selectedCat.includes(cat)
+                            ? "tab_btn_clicked"
+                            : "tab_btn"
+                        }
+                        key={cat}
+                        category={cat}
+                        title={cat}
+                        onClick={() => {
+                          toggleCat(cat);
+                        }}
+                      />
+                    ))}
+                  </Buttondiv>
                 </ButtonWrap>
               }
             />
@@ -198,16 +276,7 @@ function MainPageInput(props) {
             <BarButton
               id="chooseFoodCat_Btn"
               title={"공유하기"}
-              onClick={() => {
-                if (
-                  text === "" ||
-                  describe === "" ||
-                  selectedImage === "" ||
-                  cat === ""
-                ) {
-                  alert("모두 입력해주세요.");
-                }
-              }}
+              onClick={handleSummitClick}
             />
           </BarButtonStyle>
         </Wrapper>
