@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91179f88-46d6-458b-906d-6d992b1bcf37" name="Changes" comment="" />
+    <list default="true" id="91179f88-46d6-458b-906d-6d992b1bcf37" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/demo/src/test/java/hello/demo/service/ContentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/out/production/classes/hello/demo/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/out/production/classes/hello/demo/SpringConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/out/production/classes/hello/demo/controller/ContentForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/out/production/classes/hello/demo/controller/ContentForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/out/production/classes/hello/demo/controller/ContentFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/out/production/classes/hello/demo/controller/ContentFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/out/production/classes/hello/demo/domain/Content.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/out/production/classes/hello/demo/domain/Content.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/ContentForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/ContentForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/ContentFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/ContentFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/FoodForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/FoodForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/FoodFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/FoodFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/Content.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/Content.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/FoodRecInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/FoodRecInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/FoodRecInputRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/FoodRecInputRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/JpaContentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/JpaContentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/JpaFoodRecInputRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/JpaFoodRecInputRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/JpaMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/JpaMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/service/FoodRecInputService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/service/FoodRecInputService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hello/demo/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hello/demo/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/test/java/hello/demo/service/FoodRecInputServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/test/java/hello/demo/service/FoodRecInputServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,8 +64,8 @@
       <list>
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -56,37 +80,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/0106y/food_recommend_server",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "terminal",
-    "spring.configuration.checksum": "91a1812bde161b9643cecd86afec0795",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/0106y/food_recommend_server&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;91a1812bde161b9643cecd86afec0795&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -107,27 +131,21 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.DemoApplication (2)">
-    <configuration name="demo [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/demo" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
+    <configuration name="ContentServiceTest.saveContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hello.demo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hello.demo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="hello.demo.service" />
+      <option name="MAIN_CLASS_NAME" value="hello.demo.service.ContentServiceTest" />
+      <option name="METHOD_NAME" value="saveContent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="FoodRecInputServiceTest.saveInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hello.demo.test" />
@@ -209,10 +227,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.FoodRecInputServiceTest.saveInput" />
+        <item itemvalue="JUnit.ContentServiceTest.saveContent" />
         <item itemvalue="JUnit.MemberServiceIntegrationTest.join" />
         <item itemvalue="JUnit.MemberServiceIntegrationTest.duplicate_member" />
         <item itemvalue="JUnit.MemberServiceIntegrationTest" />
-        <item itemvalue="Gradle.demo [dependencies]" />
       </list>
     </recent_temporary>
   </component>
@@ -227,7 +245,9 @@
       <workItem from="1697634566730" duration="14497000" />
       <workItem from="1697692126880" duration="3086000" />
       <workItem from="1697759985260" duration="25293000" />
-      <workItem from="1697866775955" duration="54948000" />
+      <workItem from="1697866775955" duration="56186000" />
+      <workItem from="1698023363113" duration="3215000" />
+      <workItem from="1698068403454" duration="19403000" />
     </task>
     <servers />
   </component>

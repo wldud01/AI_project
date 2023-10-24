@@ -1,40 +1,60 @@
 package hello.demo.domain;
-
 import jakarta.persistence.*;
-
-import java.time.LocalDateTime;
 import java.util.List;
 
+// DB Entity table 자동 생성
 @Entity
 public class Content {
+
+    //기본키 ID 자동 생성
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    //contentId 자동 생성
     @Column
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long contentId;
-    // 위치 Id
+
+    // 위치
     @Column
     private String location;
 
+    // 글을 쓴 User Id, 추후에 Member과 Join을 고려해보자
     @Column
     private String authorId;
+
+    // 글 생성 일자
     @Column
-    private LocalDateTime createdDate;
+    private String createdDate;
+
+    // 글 제목
     @Column
     private String title;
+    // 설명글 내용
     @Column
     private String text;
+
+    // 업로드한 사진 URL
     @Column
     private String fileUrl;
-    // 사용자가 입력하는 위치 url, 공유 방식\
+
+    // 사용자가 입력하는 위치 url, 공유 방식
     @Column
     private String shareUrl;
+
+    // 한식 양식 중식 일식등 category
     @Column
-    // 한식 양식 중식 일식
+    @ElementCollection
     private List<String> category;
-    @Column
     // 좋아요 수
+    @Column
     private long voteCount;
+
+    /*
+     Lombock annotation으로 Getter Setter을 쓰면 더욱 간단하지만 일단 순수
+     Java 코드 구현 방식으로 진행을 먼저 하고 불필요한 코드를 줄여나간다.
+    */
     public Long getId() {
         return id;
     }
@@ -51,11 +71,11 @@ public class Content {
         this.contentId = contentId;
     }
 
-    public String getLocationId() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocationId(String location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
@@ -67,11 +87,11 @@ public class Content {
         this.authorId = authorId;
     }
 
-    public LocalDateTime getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(LocalDateTime createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 

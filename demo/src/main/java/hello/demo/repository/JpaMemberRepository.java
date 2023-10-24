@@ -2,9 +2,6 @@ package hello.demo.repository;
 
 import hello.demo.domain.Member;
 import jakarta.persistence.EntityManager;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 

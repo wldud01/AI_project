@@ -1,6 +1,7 @@
 package hello.demo.domain;
-
 import jakarta.persistence.*;
+import java.util.List;
+
 @Entity
 public class FoodRecInput {
     @Id
@@ -10,7 +11,9 @@ public class FoodRecInput {
     @Column
     private String userId;
     @Column
-    private String cookedCategory;
+    @CollectionTable(name = "FOOD_REC_INPUT_COOKED_CATEGORY", joinColumns = @JoinColumn(name = "id"))
+    @ElementCollection
+    private List<String> cookedCategory;
     @Column
     private String selectedKcal;
     @Column
@@ -68,11 +71,11 @@ public class FoodRecInput {
         this.userId = userId;
     }
 
-    public String getCookedCategory() {
+    public List<String> getCookedCategory() {
         return cookedCategory;
     }
 
-    public void setCookedCategory(String cookedCategory) {
+    public void setCookedCategory(List<String> cookedCategory) {
         this.cookedCategory = cookedCategory;
     }
 }

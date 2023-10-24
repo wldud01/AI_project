@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -25,7 +28,10 @@ class FoodRecInputServiceTest {
         //given
         FoodRecInput foodRecInput = new FoodRecInput();
         foodRecInput.setUserId(member.getName());
-        foodRecInput.setCookedCategory("한식");
+        List<String> category = new ArrayList<String>();
+        category.add("hello");
+        category.add("world");
+        foodRecInput.setCookedCategory(category);
         foodRecInput.setSelectedKcal("1000");
         foodRecInput.setSelectedCar("12");
         foodRecInput.setSelectedProtein("5");

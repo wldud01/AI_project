@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ContentForm {
 
-    private Long contentId;
+   // private Long contentId;
     // 위치 Id
     private String location;
     private String authorId;
@@ -30,13 +30,13 @@ public class ContentForm {
         return createdDate;
     }
 
-    public void setContentId(long contentId) {
-        this.contentId = contentId;
-    }
-
-    public Long getContentId() {
-        return contentId;
-    }
+//    public void setContentId(long contentId) {
+//        this.contentId = contentId;
+//    }
+//
+//    public Long getContentId() {
+//        return contentId;
+//    }
 
     public String getAuthorId() {
         return authorId;

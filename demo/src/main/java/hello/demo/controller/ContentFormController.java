@@ -3,10 +3,7 @@ package hello.demo.controller;
 import hello.demo.domain.Content;
 import hello.demo.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -22,15 +19,17 @@ public class ContentFormController {
     // content  저장
     @PostMapping("/content/new")
     public String create(@RequestBody ContentForm form){
+        // 게시글 객체 생성
         Content content = new Content();
-        content.setContentId(form.getContentId());
-        content.setLocationId(form.getLocation());
+
+        content.setLocation(form.getLocation());
         content.setAuthor(form.getAuthorId());
         content.setTitle(form.getTitle());
         content.setText(form.getText());
         content.setFileUrl(form.getFileUrl());
         content.setShareUrl(form.getShareUrl());
         content.setCategory(form.getCategory());
+        content.setCreatedDate(form.getCreatedDate());
         content.setVoteCount(form.getVoteCount());
 
         contentService.saveContent(content);

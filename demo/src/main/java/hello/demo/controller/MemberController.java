@@ -2,22 +2,13 @@ package hello.demo.controller;
 
 import hello.demo.domain.Member;
 import hello.demo.service.MemberService;
-import io.swagger.v3.oas.annotations.OpenAPIDefinition;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.websocket.server.PathParam;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
-import java.util.SimpleTimeZone;
-
 @RestController
 @RequestMapping("/api")
 public class MemberController {

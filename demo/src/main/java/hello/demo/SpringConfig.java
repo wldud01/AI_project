@@ -11,12 +11,13 @@ import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import jakarta.persistence.EntityManager;
-import org.apache.catalina.filters.CorsFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+
 
 import java.util.Arrays;
 
@@ -30,7 +31,7 @@ public class SpringConfig {
     public SpringConfig(EntityManager em){
         this.em = em;
     }
-
+    // Member repository DI
     @Bean
     public MemberService memberService(){
         return new MemberService(memberRepository());
@@ -42,6 +43,7 @@ public class SpringConfig {
         //return new JdbcTemplateMemberRepository(dataSource);
         return new JpaMemberRepository(em);
     }
+    // Food input value repository DI
     @Bean
     public FoodRecInputService foodRecInputService(){
         return new FoodRecInputService(foodRecInputRepository());
@@ -71,7 +73,7 @@ public class SpringConfig {
         return  new TimeTraceAop();
     }
 
-    //Swagger
+    //Swagger API 문서
     @Bean
     public OpenAPI openAPI() {
         return new OpenAPI()
@@ -85,15 +87,17 @@ public class SpringConfig {
                 .description("Springdoc을 사용한 Swagger UI 테스트")
                 .version("1.0.0");
     }
+
+    // CORS 문제 해결
     @Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // 허용할 웹사이트 도메인
-        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
+        config.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS", "PATCH"));
         config.setAllowCredentials(true);
         config.addAllowedHeader("*");
         source.registerCorsConfiguration("/**", config);
-        return new CorsFilter();
+        return new CorsFilter(source);
     }
 }

@@ -20,11 +20,13 @@ public class FoodFormController {
         this.foodRecInputService = foodRecInputService;
         System.out.println("memberService = " + foodRecInputService.getClass());
     }
-    //food input json으로 받음 - 저장만 일단 해둠
+    //food input json으로 받음 - 추후에 Data로 활용하기 위해 Data로 저장한다고 가정
     @PostMapping("/recommend/new")
     public String create(@RequestBody FoodForm form){
+        //food 객체 생성
         FoodRecInput foodRecInput = new FoodRecInput();
-        foodRecInput.setUserId(form.getUserName());
+
+        foodRecInput.setUserId(form.getUserId());
         foodRecInput.setCookedCategory(form.getCookedCategory());
         foodRecInput.setSelectedKcal(form.getSelectedKcal());
         foodRecInput.setSelectedCar(form.getSelectedCar());
@@ -34,6 +36,7 @@ public class FoodFormController {
         foodRecInputService.saveInput(foodRecInput);
         return "redirect:/";
     }
+
     //아마 사라질 URL food recommend는 flask쪽 서버가 처리
     @GetMapping("/recommend/result")
     @ResponseBody

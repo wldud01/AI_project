@@ -1,10 +1,6 @@
 package hello.demo.domain;
 
 import jakarta.persistence.*;
-
-import java.math.BigInteger;
-
-
 // User Entity
 @Entity
 public class Member {

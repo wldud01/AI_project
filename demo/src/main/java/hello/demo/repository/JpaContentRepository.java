@@ -40,7 +40,7 @@ public class JpaContentRepository implements ContentRepository {
     @Override
     public List<Content> findByLocation(String location) {
         return em.createQuery("SELECT c FROM Content c WHERE c.location = :location", Content.class)
-                .setParameter("locationId", location)
+                .setParameter("location", location)
                 .getResultList();
     }
     // 특정 카테고리의 컨텐츠 목록 가져오기
