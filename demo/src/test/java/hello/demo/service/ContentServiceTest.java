@@ -49,9 +49,23 @@ class ContentServiceTest {
     }
 
     @Test
-    void getAllContents() {
+    public List<Content> getAllContents() {
+        Content content = new Content();
+        content.setLocation("서울특별시");
+        content.setAuthor("spring");
+        content.setTitle("form.getTitle()");
+        content.setText("form.getText()");
+        content.setFileUrl("form.getFileUrl()");
+        content.setShareUrl("form.getShareUrl()");
+        content.setCreatedDate("2023-10-24");
+        List<String> category = new ArrayList<String>();
+        category.add("hello");
+        category.add("world");
+        content.setCategory(category);
+        content.setVoteCount(0);
+        System.out.println(contentService.getAllContents());
+        return contentService.getAllContents();
     }
-
     @Test
     void deleteContents() {
     }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/spring")
 public class MemberController {
     // 선언을 하고 생성자로 만들어서 사용하면 된다
     private MemberService memberService;

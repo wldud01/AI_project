@@ -3,10 +3,13 @@ package hello.demo.controller;
 import hello.demo.domain.Content;
 import hello.demo.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/spring")
 public class ContentFormController {
 
     private final ContentService contentService;
@@ -36,6 +39,11 @@ public class ContentFormController {
         return "redirect:/";
     }
     // 모든 컨텐츠 목록 조회
+    @GetMapping("/contents")
+    public ResponseEntity<List<Content>> contents(){
+        List<Content> contents = contentService.getAllContents();
+        return ResponseEntity.ok(contents);
+    }
     // 특정 카테고리의 컨텐츠 목록 조회
     // 특정 사용자(작성자)의 컨텐츠 목록 조회
 

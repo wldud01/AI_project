@@ -55,6 +55,7 @@ public class JpaContentRepository implements ContentRepository {
     public List<Content> findAll() {
         return em.createQuery("SELECT c FROM Content c", Content.class)
                 .getResultList();
+        
     }
     // 모든 컨텐츠 목록 삭제하기
     @Override

@@ -11,10 +11,6 @@ public class Content {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //contentId 자동 생성
-    @Column
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long contentId;
 
     // 위치
     @Column
@@ -63,13 +59,6 @@ public class Content {
         this.id = id;
     }
 
-    public long getContentId() {
-        return contentId;
-    }
-
-    public void setContentId(long contentId) {
-        this.contentId = contentId;
-    }
 
     public String getLocation() {
         return location;
