@@ -25,7 +25,7 @@ function PostBoxList(props) {
     }
     console.log(selectedCat);
   };
-  console.log("1" + selectedCat);
+
   return (
     <Wrapper id={id}>
       {category.map((cat, index) => (

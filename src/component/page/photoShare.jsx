@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 //list
@@ -7,6 +7,7 @@ import Navi from "../list/nav";
 import data from "../../data.json";
 import Header from "../list/mainHead";
 import PostBoxList from "../list/PostBoxList";
+import axios from "axios";
 
 import Back from "./image/Back.svg";
 
@@ -80,6 +81,19 @@ const Text = styled.span`
 // mainpage body에 해당하는 부분
 function photoShare(props) {
   const {} = props;
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://172.28.24.85:8080/flask/") // 이 URL은 Spring Boot API 엔드포인트에 대한 경로입니다.
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+  console.log(data);
 
   const navigate = useNavigate(); // route를 사용하기 위해서 useNavigator를 보면
   // 그리고 버튼을 눌렀을 때 경로를 설정해 두고 만약 아이디마다 다른 값을 두고 싶다면 파라미터를 이용하자!

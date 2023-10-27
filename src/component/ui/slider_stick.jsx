@@ -5,33 +5,11 @@ import "rc-slider/assets/index.css";
 // 버튼 껍데기 ㄴ만들기
 
 function Slider_stick(props) {
-  const { min, max, rate, fact } = props;
+  const { min, max, onChange, fact, values } = props;
   const [value, setValue] = useState(0);
-  var kcal = 0;
-  var carb = 0;
-  var fat = 0;
-  var protein = 0;
-
-  // 영양성분 Slider 값
-  const onChangeValue = (newValue) => {
-    setValue(newValue);
-    console.log(`${fact}`, newValue);
-  };
-
-  if (fact === "칼로리") {
-    kcal = value;
-  }
-  if (fact === "탄수화물") {
-    carb = value;
-  }
-  if (fact === "지방") {
-    fat = value;
-  }
-  if (fact === "단백질") {
-    protein = value;
-  }
-
-  console.log(kcal, carb, fat, protein);
+  useEffect(() => {
+    setValue(values);
+  }, [values]);
   return (
     <div style={{ marginBottom: "5%" }}>
       <span>
@@ -42,7 +20,7 @@ function Slider_stick(props) {
           {fact === "칼로리" ? "Kcal" : "%"}
         </small>
       </span>
-      <Slider min={min} max={max} onChange={onChangeValue} value={value} />
+      <Slider min={min} max={max} onChange={onChange} value={values} />
     </div>
   );
 }

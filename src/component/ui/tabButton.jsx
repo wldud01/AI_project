@@ -26,6 +26,8 @@ const StyledButton = styled.div`
 
 function tabButton(props) {
   const { title, onClick, btnid, className } = props;
+
+  // 단어길이에 맞춰서 길이
   const buttonWidth = title
     ? `${Math.min(Math.max(title.length * 15, 48), 150)}px`
     : "48px";

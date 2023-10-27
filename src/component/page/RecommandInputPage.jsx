@@ -8,7 +8,7 @@ import Header from "../list/mainHead";
 import PostBox from "../list/PostBoxItem";
 import "rc-slider/assets/index.css";
 //ui
-import Slider from "rc-slider";
+import Slider from "../ui/slider_stick";
 import TabButton from "../ui/tabButton";
 // DB or api 임시방편
 import data from "../../data.json";
@@ -88,17 +88,9 @@ const BarButtonStyle = styled.div`
 // mainpage body에 button 눌렀을 때 해당하는 부분
 function RecommandInputPage(props) {
   const {} = props;
-  const [value, setValue] = useState(0);
-  const [factor, setFactor] = useState([
-    "칼로리",
-    "탄수화물",
-    "단백질",
-    "지방",
-  ]);
   const food_cat = ["구이", "국물", "빵&과자", "찜", "야채", "조림", "무침"];
 
   const [selectedCat, setSelectedCat] = useState([]);
-  const [selectedfactor, setSelectedFactor] = useState([]);
   const [category, setCategory] = useState(food_cat);
   const [kcal, setKcal] = useState(0);
   const [carb, setCarb] = useState(0);
@@ -123,7 +115,7 @@ function RecommandInputPage(props) {
     console.log(protein);
   };
 
-  //categorhy
+  //category
   const toggleCat = (cat) => {
     if (selectedCat.includes(cat)) {
       setSelectedCat(selectedCat.filter((c) => c !== cat));
@@ -144,7 +136,7 @@ function RecommandInputPage(props) {
     };
     console.log(data);
     // Spring Boot 서버의 엔드포인트 URL 설정
-    const Url = "http://localhost:8000/api/recommend/new"; // 원하는 엔드포인트 URL로 변경하세요
+    const Url = "http://172.28.24.85:8080/flask/create/"; // 원하는 엔드포인트 URL로 변경하세요
     // 데이터를 Spring으로 전송
     await axios
       .post(Url, data, {
@@ -207,58 +199,34 @@ function RecommandInputPage(props) {
               itemId="recommandInputpage_factor"
               content={
                 <DragDrop>
-                  <div style={{ marginBottom: "5%" }}>
-                    <span>
-                      {"칼로리" + " "}
-
-                      <small>{kcal + " " + "kcal"}</small>
-                    </span>
-                    <Slider
-                      min={0}
-                      max={1000}
-                      onChange={onChangeKcal}
-                      value={kcal}
-                    />
-                  </div>
-                  <div style={{ marginBottom: "5%" }}>
-                    <span>
-                      {"탄수화물" + " "}
-
-                      <small>{carb + " " + "%"}</small>
-                    </span>
-                    <Slider
-                      min={0}
-                      max={100}
-                      onChange={onChangeCarb}
-                      value={carb}
-                    />
-                  </div>
-                  <div style={{ marginBottom: "5%" }}>
-                    <span>
-                      {"단백질" + " "}
-
-                      <small>{protein + " " + "%"}</small>
-                    </span>
-                    <Slider
-                      min={0}
-                      max={100}
-                      onChange={onChangeProtein}
-                      value={protein}
-                    />
-                  </div>
-                  <div style={{ marginBottom: "5%" }}>
-                    <span>
-                      {"지방" + " "}
-
-                      <small>{fat + " " + "%"}</small>
-                    </span>
-                    <Slider
-                      min={0}
-                      max={100}
-                      onChange={onChangefat}
-                      value={fat}
-                    />
-                  </div>
+                  <Slider
+                    min={0}
+                    max={1000}
+                    onChange={onChangeKcal}
+                    fact={"칼로리"}
+                    values={kcal}
+                  />
+                  <Slider
+                    min={0}
+                    max={100}
+                    onChange={onChangeCarb}
+                    fact={"탄수화물"}
+                    values={carb}
+                  />
+                  <Slider
+                    min={0}
+                    max={100}
+                    onChange={onChangeProtein}
+                    fact={"단백질"}
+                    values={protein}
+                  />
+                  <Slider
+                    min={0}
+                    max={100}
+                    fact={"지방"}
+                    onChange={onChangefat}
+                    values={fat}
+                  />
                 </DragDrop>
               }
             />
