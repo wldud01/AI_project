@@ -8,6 +8,8 @@ import data from "../../data.json";
 import Header from "../list/mainHead";
 import PostBoxList from "../list/PostBoxList";
 import axios from "axios";
+//ui
+import TabButton from "../ui/tabButton";
 
 import Back from "./image/Back.svg";
 
@@ -64,24 +66,38 @@ const Buttons = styled.div`
   display: flex;
   width: 90%;
   height: auto;
-  justify-content: center;
+  justify-content: space-evenly;
 `;
 const Text = styled.span`
   display: flex;
   font-size: 16px;
-  width: 83%;
+  width: 76%;
   height: auto;
   justify-content: end;
   align-items: center;
-  color: #545454;
+  color: #4369ad;
   font-weight: 700;
   padding-top: 2%;
   padding-bottom: 2%;
+  margin-top: 2.5%;
+  margin-bottom: 1.5%;
 `;
 // mainpage body에 해당하는 부분
 function photoShare(props) {
   const {} = props;
   const [data, setData] = useState([]);
+  //tab button
+  const [category, setCategory] = useState(["한식", "양식", "중식", "일식"]);
+
+  const [selectedCat, setSelectedCat] = useState([]);
+  const toggleCat = (cat) => {
+    if (selectedCat.includes(cat)) {
+      setSelectedCat(selectedCat.filter((c) => c !== cat));
+    } else {
+      setSelectedCat([cat]);
+    }
+    console.log(selectedCat);
+  };
 
   useEffect(() => {
     axios
@@ -111,13 +127,23 @@ function photoShare(props) {
           </BestContentWrapper>
           <ButtonWrap>
             <Text onClick={() => navigate("/receipt/writepost")}>
-              {"🙋 글쓰기"}
+              <span>{"🙋 글쓰기"}</span>
             </Text>
             <Buttons>
-              <PostBoxList
-                id="receiptSharepage_cat"
-                list={["한식", "양식", "중식", "일식"]}
-              />
+              {category.map((cat, index) => (
+                <TabButton
+                  className={
+                    selectedCat.includes(cat) ? "tab_btn_clicked" : "tab_btn"
+                  }
+                  key={cat}
+                  category={cat}
+                  title={cat}
+                  onClick={() => {
+                    console.log(selectedCat);
+                    toggleCat(cat);
+                  }}
+                />
+              ))}
             </Buttons>
           </ButtonWrap>
           <ContentBox post={data} />

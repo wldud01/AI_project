@@ -14,30 +14,19 @@ const Wrapper = styled.div`
 `;
 
 function PostBoxList(props) {
-  const { list, id } = props;
+  const { list, id, onClick, className } = props;
   const [category, setCategory] = useState(list);
   const [selectedCat, setSelectedCat] = useState([]);
-  const toggleCat = (cat) => {
-    if (selectedCat.includes(cat)) {
-      setSelectedCat(selectedCat.filter((c) => c !== cat));
-    } else {
-      setSelectedCat([...selectedCat, cat]);
-    }
-    console.log(selectedCat);
-  };
 
   return (
     <Wrapper id={id}>
       {category.map((cat, index) => (
         <TabButton
-          className={selectedCat.includes(cat) ? "tab_btn_clicked" : "tab_btn"}
+          className={className}
           key={cat}
           category={cat}
           title={cat}
-          onClick={() => {
-            console.log(selectedCat);
-            toggleCat(cat);
-          }}
+          onClick={onClick}
         />
       ))}
     </Wrapper>

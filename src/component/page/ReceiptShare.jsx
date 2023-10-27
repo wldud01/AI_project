@@ -4,6 +4,8 @@ import styled from "styled-components";
 //list
 import ContentBox from "../list/ReceiptList";
 import Navi from "../list/nav";
+//ui
+import TabButton from "../ui/tabButton";
 // import data from "../../data.json";
 import Header from "../list/mainHead";
 import Back from "./image/Back.svg";
@@ -60,19 +62,21 @@ const Buttons = styled.div`
   display: flex;
   width: 90%;
   height: auto;
-  justify-content: center;
+  justify-content: space-evenly;
 `;
 const Text = styled.span`
   display: flex;
   font-size: 16px;
-  width: 85%;
+  width: 76%;
   height: auto;
   justify-content: end;
   align-items: center;
-  color: #545454;
+  color: #4369ad;
   font-weight: 700;
   padding-top: 2%;
   padding-bottom: 2%;
+  margin-top: 2.5%;
+  margin-bottom: 1.5%;
 `;
 /**
  *
@@ -87,17 +91,36 @@ const Text = styled.span`
 function photoShare(props) {
   const {} = props;
   const [data, setData] = useState([]);
+  //tab button
+  const [category, setCategory] = useState(["한식", "양식", "중식", "일식"]);
+
+  const [selectedCat, setSelectedCat] = useState([]);
+  const toggleCat = (cat) => {
+    if (selectedCat.includes(cat)) {
+      setSelectedCat(selectedCat.filter((c) => c !== cat));
+    } else {
+      setSelectedCat([cat]);
+    }
+    console.log(selectedCat);
+  };
 
   useEffect(() => {
+    let apiUrl = "http://172.28.24.85:8080/spring/contents";
+
+    if (selectedCat.length > 0) {
+      // 선택한 카테고리가 존재하는 경우
+      apiUrl = `http://172.28.24.85:8080/spring/content/?id=${selectedCat}`;
+    }
+
     axios
-      .get("http://172.28.24.85:8080/spring/contents") // 이 URL은 Spring Boot API 엔드포인트에 대한 경로입니다.
+      .get(apiUrl)
       .then((response) => {
         setData(response.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, []);
+  }, [selectedCat]);
   console.log(data);
   const navigate = useNavigate(); // route를 사용하기 위해서 useNavigator를 보면
   // 그리고 버튼을 눌렀을 때 경로를 설정해 두고 만약 아이디마다 다른 값을 두고 싶다면 파라미터를 이용하자!
@@ -114,14 +137,26 @@ function photoShare(props) {
             <Container />
           </BestContentWrapper>
           <ButtonWrap>
-            <Text onClick={() => navigate("/receipt/writepost")}>
-              {"🙋 글쓰기"}
+            <Text>
+              <span onClick={() => navigate("/receipt/writepost")}>
+                {"🙋 글쓰기"}
+              </span>
             </Text>
             <Buttons>
-              <PostBoxList
-                id="receiptSharepage_cat"
-                list={["한식", "양식", "중식", "일식"]}
-              />
+              {category.map((cat, index) => (
+                <TabButton
+                  className={
+                    selectedCat.includes(cat) ? "tab_btn_clicked" : "tab_btn"
+                  }
+                  key={cat}
+                  category={cat}
+                  title={cat}
+                  onClick={() => {
+                    console.log(selectedCat);
+                    toggleCat(cat);
+                  }}
+                />
+              ))}
             </Buttons>
           </ButtonWrap>
 

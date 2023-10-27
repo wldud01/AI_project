@@ -14,6 +14,7 @@ import TabButton from "../ui/tabButton";
 import data from "../../data.json";
 import Back from "./image/Back.svg";
 import BarButton from "../ui/barButton";
+
 // header 아래 body 부분을 감싸는 wapper
 const Wrapper = styled.div`
   width: 100%;
@@ -49,7 +50,7 @@ const ButtonWrap = styled.div`
 const Buttondiv = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: start;
+  justify-content: space-evenly;
   width: 100%;
   height: 97%;
   box-sizing: border-box;
@@ -135,11 +136,26 @@ function RecommandInputPage(props) {
       selectedFat: `${fat}`,
     };
     console.log(data);
-    // Spring Boot 서버의 엔드포인트 URL 설정
-    const Url = "http://172.28.24.85:8080/flask/create/"; // 원하는 엔드포인트 URL로 변경하세요
+    // flask로 프록시
+    const Url = "http://172.28.24.85:8080/flask/create"; // 원하는 엔드포인트 URL로 변경하세요
     // 데이터를 Spring으로 전송
     await axios
       .post(Url, data, {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      })
+      .then((response) => {
+        console.log("Data sent successfully:", response.data);
+        // 데이터 전송 후 원하는 동작 수행
+      })
+      .catch((error) => {
+        console.error("Error sending data:", error);
+      });
+
+    // 데이터를 Spring으로 전송
+    const Url_spring = "http://172.28.24.85:8080/spring/recommend/new"; // 원하는 엔드포인트 URL로 변경하세요
+    await axios
+      .post(Url_spring, data, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       })

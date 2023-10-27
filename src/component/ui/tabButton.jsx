@@ -8,8 +8,8 @@ const StyledButton = styled.div`
   align-items: center;
   justify-content: space-evenly;
   cursor: pointer;
-  margin-right: 2.5%;
-  margin-bottom: 2.5%;
+
+  margin-bottom: 3.5%;
   border-radius: 18px;
   background: #fff;
   font-family: IBM Plex Sans KR;
