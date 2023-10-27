@@ -137,7 +137,7 @@ function RecommandInputPage(props) {
     };
     console.log(data);
     // flask로 프록시
-    const Url = "http://172.28.24.85:8080/flask/create"; // 원하는 엔드포인트 URL로 변경하세요
+    const Url = "http://YOUR_IP:8080/flask/create"; // 원하는 엔드포인트 URL로 변경하세요
     // 데이터를 Spring으로 전송
     await axios
       .post(Url, data, {
@@ -153,7 +153,7 @@ function RecommandInputPage(props) {
       });
 
     // 데이터를 Spring으로 전송
-    const Url_spring = "http://172.28.24.85:8080/spring/recommend/new"; // 원하는 엔드포인트 URL로 변경하세요
+    const Url_spring = "http://YOUR_IP:8080/spring/recommend/new"; // 원하는 엔드포인트 URL로 변경하세요
     await axios
       .post(Url_spring, data, {
         headers: { "Content-Type": "application/json" },
