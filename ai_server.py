@@ -6,7 +6,7 @@ created_object=[]
 
 @app.after_request
 def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', 'http://172.28.16.1:3000')  # 모든 도메인에서의 요청을 허용
+    response.headers.add('Access-Control-Allow-Origin', 'http://YOUR_IP:3000')  # 모든 도메인에서의 요청을 허용
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
     response.headers.add('Access-Control-Allow-Credentials', 'true')
     response.headers.add('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
