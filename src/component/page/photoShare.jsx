@@ -85,7 +85,7 @@ function photoShare(props) {
 
   useEffect(() => {
     axios
-      .get("http://172.28.24.85:8080/flask/") // 이 URL은 Spring Boot API 엔드포인트에 대한 경로입니다.
+      .get("http://YOUR_IP:8080/flask/") // 이 URL은 Spring Boot API 엔드포인트에 대한 경로입니다.
       .then((response) => {
         setData(response.data);
       })
