@@ -136,7 +136,7 @@ function RecommandInputPage(props) {
     };
     console.log(data);
     // Spring Boot 서버의 엔드포인트 URL 설정
-    const Url = "http://172.28.24.85:8080/flask/create/"; // 원하는 엔드포인트 URL로 변경하세요
+    const Url = "http://YOUR_IP:8080/flask/create/"; // 원하는 엔드포인트 URL로 변경하세요
     // 데이터를 Spring으로 전송
     await axios
       .post(Url, data, {
