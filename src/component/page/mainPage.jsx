@@ -107,7 +107,7 @@ function MainPage(props) {
                 btnName="공유하기"
                 btnid="ctn_2_btn"
                 onClick={() => {
-                  navigate("/share");
+                  navigate("/Kcal");
                 }}
               />
             </Container>

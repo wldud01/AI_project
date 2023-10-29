@@ -22,6 +22,7 @@ const StyledButton = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-left: 2%;
 `;
 
 function tabButton(props) {
@@ -29,8 +30,8 @@ function tabButton(props) {
 
   // 단어길이에 맞춰서 길이
   const buttonWidth = title
-    ? `${Math.min(Math.max(title.length * 15, 48), 150)}px`
-    : "48px";
+    ? `${Math.min(Math.max(title.length * 15, 40), 150)}px`
+    : "40px";
 
   return (
     <StyledButton

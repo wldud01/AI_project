@@ -12,6 +12,7 @@ import VideoPage from "./component/page/videoPage";
 import NamingPage from "./component/page/namingPage";
 import MyPage from "./component/page/myPage";
 import RecommandInput from "./component/page/RecommandInputPage";
+import FoodInfo from "./component/page/foodInfo";
 
 function App() {
   return (
@@ -20,9 +21,11 @@ function App() {
         <Route index element={<MainPage />} />
         <Route path="/home" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="share/" element={<Photoshare />} />
+        <Route path="Kcal/" element={<Photoshare />} />
+        <Route path="foodInfo/:path" element={<FoodInfo />} />
         <Route path=":path/setName/" element={<NamingPage />} />
-        <Route path="receipt/" element={<Receiptshare />} />
+        <Route path="photo/" element={<Receiptshare />} />
+
         <Route path="recommandInput/" element={<RecommandInput />} />
         <Route path="mypage/" element={<MyPage />} />
         <Route path="/youtube/" element={<VideoPage />} />

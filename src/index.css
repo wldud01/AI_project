@@ -171,7 +171,7 @@ code {
   line-height: normal;
   box-sizing: border-box;
   padding: 5px;
-  width: 94%;
+  width: 88%;
   justify-content: center;
   align-items: center;
   height: 91%;
@@ -271,4 +271,19 @@ code {
 /*보이거나 없애는 경우 - 맨 마지막 위치할 것 반드시*/
 #None {
   display: none;
+}
+
+/*food info btn*/
+#FoodInfo_Btn {
+  width: 84%;
+  margin-top: 4%;
+  height: 49px;
+  font-size: 14pt;
+  letter-spacing: 1px;
+}
+#Search_Btn {
+  width: 84px;
+  height: 41px;
+  color: white;
+  background: #0063f8;
 }

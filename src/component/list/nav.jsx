@@ -22,7 +22,7 @@ const Nav = styled.div`
 `;
 function Navigator(props) {
   const {} = props;
-  const button_name = ["home", "share", "receipt", "mypage"];
+  const button_name = ["Kcal", "home", "photo"];
   const [button, setButton] = useState(button_name);
   const [selectedBtn, setSelectedBtn] = useState([]);
   const navigate = useNavigate(); // route를 사용하기 위해서 useNavigator를 보면
@@ -30,8 +30,8 @@ function Navigator(props) {
 
   const handdletSrc = (Btn) => {
     if (Btn === "home") return Home;
-    else if (Btn === "share") return Share;
-    else if (Btn === "receipt") return Receipt;
+    else if (Btn === "Kcal") return Share;
+    else if (Btn === "photo") return Receipt;
     else if (Btn === "mypage") return Mypage;
   };
 

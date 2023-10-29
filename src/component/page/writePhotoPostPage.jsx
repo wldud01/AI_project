@@ -82,7 +82,7 @@ const ButtonWrap = styled.div`
 const Buttondiv = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: start;
+  justify-content: space-evenly;
   width: 100%;
   height: 97%;
   box-sizing: border-box;
