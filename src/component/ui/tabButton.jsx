@@ -10,7 +10,7 @@ const StyledButton = styled.div`
   cursor: pointer;
 
   margin-bottom: 3.5%;
-  border-radius: 18px;
+  border-radius: 11px;
   background: #fff;
   font-family: IBM Plex Sans KR;
   font-size: 13px;

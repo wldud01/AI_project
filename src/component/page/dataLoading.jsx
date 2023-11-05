@@ -102,7 +102,7 @@ function DataLoading(props) {
 
   // loading에 음식이 계속 바뀜
   const Food = randomImage[index];
-  const Text = randomImage[textIndex];
+  const Text = randomText[textIndex];
 
   const navigate = useNavigate(); // route를 사용하기 위해서 useNavigator를 보면
   // 그리고 버튼을 눌렀을 때 경로를 설정해 두고 만약 아이디마다 다른 값을 두고 싶다면 파라미터를 이용하자!
@@ -111,7 +111,7 @@ function DataLoading(props) {
       <Wrapper>
         <Container>
           <BackImg src={Food} />
-          <Span>{sub || Text}</Span>
+          <Span>{Text}</Span>
         </Container>
       </Wrapper>
     </div>

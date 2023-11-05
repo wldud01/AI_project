@@ -8,7 +8,6 @@ import Header from "../list/mainHead";
 //ui
 import Loading from "./loadingPage";
 // DB or api 임시방편
-import data from "../../data.json";
 import logo from "./image/logo.svg";
 
 /**
@@ -92,10 +91,10 @@ function MainPage(props) {
                 text="오늘 먹은 음식의 영양소는?"
                 subtext="오늘 먹은 칼로리가 몇이더라.."
                 content=" "
-                btnName="사진 고르기"
+                btnName="탐색하기"
                 btnid="ctn_1_btn"
                 onClick={() => {
-                  <FileSelectBtn />;
+                  navigate("/Kcal");
                 }}
               />
             </Container>
@@ -107,7 +106,7 @@ function MainPage(props) {
                 btnName="공유하기"
                 btnid="ctn_2_btn"
                 onClick={() => {
-                  navigate("/Kcal");
+                  navigate("/photo");
                 }}
               />
             </Container>

@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 //list
-import ContentBox from "../list/postListItem";
-import Navi from "../list/nav";
 import Header from "../list/mainHead";
 //ui
 import BarButton from "../ui/barButton";
@@ -12,7 +10,6 @@ import BarButton from "../ui/barButton";
 import Loading from "./loadingPage";
 // DB or api 임시방편
 import logo from "./image/logo.svg";
-import data from "../../data.json";
 
 /**
  * Main page body부분에 해당

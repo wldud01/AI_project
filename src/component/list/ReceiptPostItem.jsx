@@ -36,7 +36,7 @@ const Container = styled.div`
 const TitleText = styled.p`
   color: #000;
   font-family: "IBM Plex Sans KR";
-  font-size: 14px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -50,7 +50,7 @@ const TitleSubText = styled.span`
   /* padding-left: 14px; */
   color: #a6a6a6;
   font-family: "IBM Plex Sans KR";
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 300;
 `;
 
@@ -58,8 +58,8 @@ const StyledImage = styled.img`
   width: 99%;
   height: 70%;
   box-sizing: content-box;
-  padding-bottom: 7px;
-  border-radius: 10%;
+  padding-bottom: 5px;
+  border-radius: 8%;
 `;
 
 // Receipt container - 음식 인식후 레시피 추천 화면
@@ -74,9 +74,9 @@ function PhotoPost(props) {
       }}
     >
       <Container id="FoodReceipt" className={className}>
-        <StyledImage src={post.src} alt="Styled Image" />
+        <StyledImage src={post.data} alt="Styled Image" />
         <TitleText>{post.title || "title"}</TitleText>
-        <TitleSubText>{post.content || "subtext"}</TitleSubText>
+        <TitleSubText>{post.createdDate || "subtext"}</TitleSubText>
       </Container>
     </Wrapper>
   );

@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 //list
-import ContentBox from "../list/postListItem";
 import Navi from "../list/nav";
 import Header from "../list/mainHead";
 //ui
 import Loading from "./loadingPage";
 import Button from "../ui/button";
 // DB or api 임시방편
-import data from "../../data.json";
 import Back from "./image/Back.svg";
 import BarButton from "../ui/barButton";
 // header 아래 body 부분을 감싸는 wapper

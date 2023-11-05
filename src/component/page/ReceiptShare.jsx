@@ -8,8 +8,7 @@ import Navi from "../list/nav";
 import TabButton from "../ui/tabButton";
 // import data from "../../data.json";
 import Header from "../list/mainHead";
-import Back from "./image/Back.svg";
-import PostBoxList from "../list/PostBoxList";
+import Back from "./image/back.svg";
 import axios from "axios";
 
 /**

@@ -5,14 +5,14 @@ import styled from "styled-components";
 import Navi from "../list/nav";
 import Header from "../list/mainHead";
 import PostBox from "../list/PostBoxItem";
-import PostBoxList from "../list/PostBoxList";
 import TabButton from "../ui/tabButton";
 //ui
 // DB or api 임시방편
 import data from "../../data.json";
-import Back from "./image/Back.svg";
+import Back from "./image/back.svg";
 import BarButton from "../ui/barButton";
 import axios from "axios";
+import DropdownMenu from "../ui/dropDownMenu";
 // header 아래 body 부분을 감싸는 wapper
 const Wrapper = styled.div`
   width: 100%;
@@ -110,6 +110,7 @@ function MainPageInput(props) {
   const [describe, setDescribe] = useState("");
   const [url, setURL] = useState("");
   const [category, setCategory] = useState(["한식", "양식", "중식", "일식"]);
+  const [file, setFile] = useState(null);
   //image
   const [selectedImage, setSelectedImage] = useState("");
   const now = new Date();
@@ -117,9 +118,34 @@ function MainPageInput(props) {
   const month = now.getMonth() + 1; // 월은 0부터 시작하므로 1을 더해줍니다.
   const day = now.getDate();
 
-  const [selectedCat, setSelectedCat] = useState([]);
+  // dropDown
+  const [selectedRegion, setSelectedRegion] = useState(""); // 선택한 지역을 저장하는 상태
+  const regions = [
+    "서울특별시",
+    "부산광역시",
+    "대구광역시",
+    "인천광역시",
+    "광주광역시",
+    "대전광역시",
+    "울산광역시",
+    "세종특별자치시",
+    "경기도",
+    "강원특별자치도",
+    "충청북도",
+    "충청남도",
+    "전라북도",
+    "전라남도",
+    "경상북도",
+    "경상남도",
+    "제주특별자치도",
+  ];
+  const handleRegionChange = (event) => {
+    setSelectedRegion(event.target.value);
+    console.log(selectedRegion);
+  };
 
   //categorhy
+  const [selectedCat, setSelectedCat] = useState([]);
   const toggleCat = (cat) => {
     if (selectedCat.includes(cat)) {
       setSelectedCat(selectedCat.filter((c) => c !== cat));
@@ -130,21 +156,16 @@ function MainPageInput(props) {
   const navigate = useNavigate();
 
   async function handleSummitClick() {
-    if (
-      text === "" ||
-      describe === "" ||
-      selectedImage === "" ||
-      selectedCat === ""
-    ) {
+    if (text === "" || describe === "" || data === "" || selectedCat === "") {
       alert("모두 입력해주세요.");
     } else {
       // 전송할 데이터를 객체로 만들기
       const data = {
         authorId: "hello",
-        location: "서울특별시",
+        location: selectedRegion,
         title: text,
         text: describe,
-        fileUrl: "http://" + { selectedImage }, // 이미지 데이터 (base64 문자열 또는 이미지 URL로 변환된 데이터)
+        data: selectedImage, // 이미지 데이터 (base64 문자열 또는 이미지 URL로 변환된 데이터)
         shareUrl: url,
         category: selectedCat, // "한식", "양식", "중식", "일식" 중에서 선택된 값
         createdDate: `${year}-${month}-${day}`,
@@ -152,11 +173,11 @@ function MainPageInput(props) {
       };
       console.log(data);
       // Spring Boot 서버의 엔드포인트 URL 설정
-      const Url = "http://172.28.24.85:8080/spring/content/new"; // 원하는 엔드포인트 URL로 변경하세요
+      const spring = "http://172.28.24.85:8080/spring/content/new"; // 원하는 엔드포인트 URL로 변경하세요
 
       // 데이터를 Spring으로 전송
       await axios
-        .post(Url, data, {
+        .post(spring, data, {
           headers: { "Content-Type": "application/json" },
           withCredentials: true,
         })
@@ -167,25 +188,23 @@ function MainPageInput(props) {
         .catch((error) => {
           console.error("Error sending data:", error);
         });
+      navigate("/");
     }
-    navigate("/");
   }
-
-  const handleImageChange = (event) => {
-    const file = event.target.files[0]; // 선택한 이미지 파일 가져오기
-
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
     // 파일이 이미지인지 확인 (예: 확장자 검사)
-    if (file && file.type.startsWith("image/")) {
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        // 이미지 파일을 데이터 URL로 변환하여 selectedImage 상태에 저장
-        setSelectedImage(e.target.result);
-      };
-
-      reader.readAsDataURL(file);
-    }
   };
+  if (file && file.type.startsWith("image/")) {
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      // 이미지 파일을 데이터 URL로 변환하여 selectedImage 상태에 저장
+      setSelectedImage(e.target.result);
+    };
+
+    reader.readAsDataURL(file);
+  }
 
   return (
     <div>
@@ -201,7 +220,7 @@ function MainPageInput(props) {
               <FileSelectBtn
                 type="file"
                 accept="image/*"
-                onChange={handleImageChange}
+                onChange={handleFileChange}
                 placeholder="사진 선택"
               />
               {selectedImage && (
@@ -258,7 +277,16 @@ function MainPageInput(props) {
                 ></Input>
               }
             />
-            <PostBox title="지역 선택" content="서울특별시 중랑구" />
+            <PostBox
+              title="지역 선택"
+              content={
+                <DropdownMenu
+                  list={regions}
+                  onChange={handleRegionChange}
+                  vlaue={selectedRegion}
+                />
+              }
+            />
             <PostBox
               title="가게 URL로 모두에게 알려주세요"
               content={

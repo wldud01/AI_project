@@ -12,7 +12,7 @@ import Button from "../ui/button";
 //page
 import FoodInfo from "./foodInfo";
 
-import Back from "./image/Back.svg";
+import Back from "./image/back.svg";
 
 /**
  * photo Share page
@@ -124,7 +124,7 @@ function photoShare(props) {
     if (text !== "") {
       axios
         .get(
-          "http://openapi.foodsafetykorea.go.kr/api/3780bc83186a4d7ebdb3/I2790/json/1/10/DESC_KOR=" +
+          "http://openapi.foodsafetykorea.go.kr/api/3780bc83186a4d7ebdb3/I2790/json/1/30/DESC_KOR=" +
             `${text}`
         )
         .then((response) => {

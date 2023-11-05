@@ -8,7 +8,6 @@ import Header from "../list/mainHead";
 //ui
 import Loading from "./loadingPage";
 // DB or api 임시방편
-import data from "../../data.json";
 import logo from "./image/logo.svg";
 
 /**

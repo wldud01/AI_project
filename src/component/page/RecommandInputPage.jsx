@@ -11,8 +11,7 @@ import "rc-slider/assets/index.css";
 import Slider from "../ui/slider_stick";
 import TabButton from "../ui/tabButton";
 // DB or api 임시방편
-import data from "../../data.json";
-import Back from "./image/Back.svg";
+import Back from "./image/back.svg";
 import BarButton from "../ui/barButton";
 
 // header 아래 body 부분을 감싸는 wapper
@@ -89,7 +88,19 @@ const BarButtonStyle = styled.div`
 // mainpage body에 button 눌렀을 때 해당하는 부분
 function RecommandInputPage(props) {
   const {} = props;
-  const food_cat = ["구이", "국물", "빵&과자", "찜", "야채", "조림", "무침"];
+  const food_cat = [
+    "국물",
+    "죽",
+    "찜",
+    "구이",
+    "볶음",
+    "조림",
+    "나물",
+    "무침",
+    "음료",
+    "고기",
+    "과일",
+  ];
 
   const [selectedCat, setSelectedCat] = useState([]);
   const [category, setCategory] = useState(food_cat);
@@ -121,7 +132,7 @@ function RecommandInputPage(props) {
     if (selectedCat.includes(cat)) {
       setSelectedCat(selectedCat.filter((c) => c !== cat));
     } else {
-      setSelectedCat([...selectedCat, cat]);
+      setSelectedCat([cat]);
     }
   };
 
@@ -137,7 +148,7 @@ function RecommandInputPage(props) {
     };
     console.log(data);
     // flask로 프록시
-    const Url = "http://172.28.24.85:8080/flask/create"; // 원하는 엔드포인트 URL로 변경하세요
+    const Url = "http://172.28.24.85:8080/flask/create/"; // 원하는 엔드포인트 URL로 변경하세요
     // 데이터를 Spring으로 전송
     await axios
       .post(Url, data, {
@@ -145,6 +156,11 @@ function RecommandInputPage(props) {
         withCredentials: true,
       })
       .then((response) => {
+        localStorage.setItem(
+          "responseData",
+          JSON.stringify(response.data.prediction)
+        );
+        navigate("/result");
         console.log("Data sent successfully:", response.data);
         // 데이터 전송 후 원하는 동작 수행
       })
@@ -166,7 +182,6 @@ function RecommandInputPage(props) {
       .catch((error) => {
         console.error("Error sending data:", error);
       });
-    navigate("/");
   }
   // 페이지 이동
   const navigate = useNavigate();
@@ -180,7 +195,7 @@ function RecommandInputPage(props) {
         />
         <Wrapper>
           <Container>
-            <Text>취향에 맞게 선택해주세요</Text>
+            <Text>목적에 맞게 선택해주세요</Text>
             <PostBox
               WrapperHeight="auto"
               contentHeight="auto"

@@ -17,7 +17,7 @@ function Slider_stick(props) {
 
         <small>
           {value + " "}
-          {fact === "칼로리" ? "Kcal" : "%"}
+          {fact === "칼로리" ? "Kcal" : "g"}
         </small>
       </span>
       <Slider min={min} max={max} onChange={onChange} value={values} />
