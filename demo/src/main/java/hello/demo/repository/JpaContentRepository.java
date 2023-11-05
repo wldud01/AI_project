@@ -2,11 +2,11 @@ package hello.demo.repository;
 import hello.demo.domain.Content;
 import hello.demo.domain.Member;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Repository
 @Transactional
@@ -46,16 +46,31 @@ public class JpaContentRepository implements ContentRepository {
     // 특정 카테고리의 컨텐츠 목록 가져오기
     @Override
     public List<Content> findByCategory(List<String> category) {
-        return em.createQuery("SELECT c FROM Content c WHERE c.category IN :categories", Content.class)
-                .setParameter("category", category)
-                .getResultList();
+        if (category == null || category.isEmpty()) {
+            // 선택된 카테고리가 없으면 빈 목록을 반환
+            return Collections.emptyList();
+        }
+        String jpql = "SELECT c FROM Content c Where  ";
+
+        for (int i = 0; i < category.size(); i++) {
+            if (i > 0) {
+                jpql += " OR";
+            }
+            jpql += " c.category LIKE :category" + i;
+        }
+        TypedQuery<Content> query = em.createQuery(jpql, Content.class);
+        for (int i = 0; i < category.size(); i++) {
+            query.setParameter("category" + i, "%" + category.get(i) + "%");
+        }
+
+        return query.getResultList();
     }
     // 모든 컨텐츠 목록 가져오기
     @Override
     public List<Content> findAll() {
         return em.createQuery("SELECT c FROM Content c", Content.class)
                 .getResultList();
-        
+
     }
     // 모든 컨텐츠 목록 삭제하기
     @Override

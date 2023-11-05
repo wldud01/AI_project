@@ -14,6 +14,7 @@ import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -28,49 +29,53 @@ public class SpringConfig {
     private final EntityManager em;
 
     @Autowired
-    public SpringConfig(EntityManager em){
+    public SpringConfig(EntityManager em) {
         this.em = em;
     }
+
     // Member repository DI
     @Bean
-    public MemberService memberService(){
+    public MemberService memberService() {
         return new MemberService(memberRepository());
     }
 
     @Bean
-    public MemberRepository memberRepository(){
+    public MemberRepository memberRepository() {
         // return new MemoryMemberRepository();
         //return new JdbcTemplateMemberRepository(dataSource);
         return new JpaMemberRepository(em);
     }
+
     // Food input value repository DI
     @Bean
-    public FoodRecInputService foodRecInputService(){
+    public FoodRecInputService foodRecInputService() {
         return new FoodRecInputService(foodRecInputRepository());
     }
 
     @Bean
-    public FoodRecInputRepository foodRecInputRepository(){
+    public FoodRecInputRepository foodRecInputRepository() {
         // return new MemoryMemberRepository();
         //return new JdbcTemplateMemberRepository(dataSource);
         return new JpaFoodRecInputRepository(em);
     }
+
     // Contents repository DI
     @Bean
-    public ContentService contentService(){
+    public ContentService contentService() {
         return new ContentService(contentRepository());
     }
 
     @Bean
-    public ContentRepository contentRepository(){
+    public ContentRepository contentRepository() {
         // return new MemoryMemberRepository();
         //return new JdbcTemplateMemberRepository(dataSource);
         return new JpaContentRepository(em);
     }
+
     // time trace Aop
     @Bean
-    public TimeTraceAop timeTraceAop(){
-        return  new TimeTraceAop();
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
     }
 
     //Swagger API 문서
@@ -94,11 +99,12 @@ public class SpringConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOrigins(Arrays.asList("http://172.28.24.85:8080"));
-        config.setAllowedOrigins(Arrays.asList("http://172.28.16.1:3000"));
+        config.setAllowedOrigins(Arrays.asList("http://192.168.0.159:3000"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS", "PATCH"));
         config.setAllowCredentials(true);
         config.addAllowedHeader("*");
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }
+
 }

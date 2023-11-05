@@ -36,11 +36,11 @@ public class JpaFoodRecInputRepository implements FoodRecInputRepository {
     }
 
     @Override
-    public Optional<FoodRecInput> findByCategory(List<String> category) {
+    public List<FoodRecInput> findByCategory(List<Integer> category) {
         List<FoodRecInput> result = em.createQuery("select fr from FoodRecInput fr where fr.cookedCategory IN :category", FoodRecInput.class)
                 .setParameter("category", category)
                 .getResultList();
-        return result.stream().findAny();
+        return result;
     }
 
     @Override

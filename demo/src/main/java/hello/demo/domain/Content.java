@@ -1,5 +1,7 @@
 package hello.demo.domain;
 import jakarta.persistence.*;
+
+import java.util.Arrays;
 import java.util.List;
 
 // DB Entity table 자동 생성
@@ -33,16 +35,15 @@ public class Content {
 
     // 업로드한 사진 URL
     @Column
-    private String fileUrl;
+    private String data;
 
     // 사용자가 입력하는 위치 url, 공유 방식
     @Column
     private String shareUrl;
 
-    // 한식 양식 중식 일식등 category
+    // 한식 양식 중식 일식등 category List String 저장
     @Column
-    @ElementCollection
-    private List<String> category;
+    private String category;
     // 좋아요 수
     @Column
     private long voteCount;
@@ -100,12 +101,12 @@ public class Content {
         this.text = text;
     }
 
-    public String getFileUrl() {
-        return fileUrl;
+    public String getData() {
+        return data;
     }
 
-    public void setFileUrl(String fileUrl) {
-        this.fileUrl = fileUrl;
+    public void setData(String data) {
+        this.data = data;
     }
 
 
@@ -117,12 +118,12 @@ public class Content {
         this.shareUrl = shareUrl;
     }
 
-    public List<String> getCategory() {
-        return category;
+    public void setCategory(List<String> category) {
+        this.category = String.join(",", category);
     }
 
-    public void setCategory(List<String> category) {
-        this.category = category;
+    public List<String> getCategory() {
+        return Arrays.asList(category.split(","));
     }
 
     public long getVoteCount() {

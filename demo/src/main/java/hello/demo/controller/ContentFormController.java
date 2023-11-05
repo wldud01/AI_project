@@ -29,7 +29,7 @@ public class ContentFormController {
         content.setAuthor(form.getAuthorId());
         content.setTitle(form.getTitle());
         content.setText(form.getText());
-        content.setFileUrl(form.getFileUrl());
+        content.setData(form.getData());
         content.setShareUrl(form.getShareUrl());
         content.setCategory(form.getCategory());
         content.setCreatedDate(form.getCreatedDate());
@@ -45,6 +45,15 @@ public class ContentFormController {
         return ResponseEntity.ok(contents);
     }
     // 특정 카테고리의 컨텐츠 목록 조회
+
+    @GetMapping("/content/")
+    public  ResponseEntity<List<Content>> kindOfContent(@RequestParam("id") List<String> ids){
+        String cat = new String();
+        List<Content> content = contentService.getContentsByCategory(ids);
+        return  ResponseEntity.ok(content);
+
+    }
+
     // 특정 사용자(작성자)의 컨텐츠 목록 조회
 
 }

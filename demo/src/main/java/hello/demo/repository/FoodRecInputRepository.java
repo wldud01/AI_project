@@ -15,7 +15,7 @@ public interface FoodRecInputRepository {
     // user_name
     Optional<FoodRecInput> findByUserId(String userId);
     //user_mbti
-    Optional<FoodRecInput> findByCategory(List<String> category);
+    List<FoodRecInput> findByCategory(List<Integer> category);
     List<FoodRecInput> findByFoodInfo(String category);
     // 모든 유저
     List<FoodRecInput> findAll();

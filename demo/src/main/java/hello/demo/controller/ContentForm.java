@@ -1,6 +1,8 @@
 package hello.demo.controller;
 
-import java.time.LocalDateTime;
+import jakarta.persistence.Lob;
+import org.apache.tomcat.util.codec.binary.Base64;
+
 import java.util.List;
 
 public class ContentForm {
@@ -10,11 +12,11 @@ public class ContentForm {
     private String location;
     private String authorId;
 
+
+    private String  data;
     private String title;
     private String text;
-    private String fileUrl;
     // 사용자가 입력하는 위치 url, 공유 방식
-    private String shareNum;
     private String shareUrl;
     // 한식 양식 중식 일식
     private List<String> category;
@@ -38,6 +40,14 @@ public class ContentForm {
 //        return contentId;
 //    }
 
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getData() {
+        return  data;
+    }
+
     public String getAuthorId() {
         return authorId;
     }
@@ -54,13 +64,6 @@ public class ContentForm {
         this.category = category;
     }
 
-    public String getFileUrl() {
-        return fileUrl;
-    }
-
-    public void setFileUrl(String fileUrl) {
-        this.fileUrl = fileUrl;
-    }
 
     public void setLocation(String location) {
         this.location = location;

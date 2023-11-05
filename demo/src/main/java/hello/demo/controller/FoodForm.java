@@ -1,7 +1,5 @@
 package hello.demo.controller;
 
-import hello.demo.domain.Member;
-
 import java.util.List;
 
 public class FoodForm {

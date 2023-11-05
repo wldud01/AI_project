@@ -1,5 +1,6 @@
 package hello.demo.service;
 
+import hello.demo.domain.Content;
 import hello.demo.domain.FoodRecInput;
 import hello.demo.repository.FoodRecInputRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class FoodRecInputService {
 
             foodRecInputRepository.save(foodRecInput);
             return foodRecInput.getCookedCategory();
+    }
+    public List<FoodRecInput> getFoodByCategory(List<Integer> category) {
+        return foodRecInputRepository.findByCategory(category);
     }
     // 전체 회원 조회
     public List<FoodRecInput> findContent(){
