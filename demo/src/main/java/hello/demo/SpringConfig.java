@@ -98,8 +98,13 @@ public class SpringConfig {
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
+<<<<<<< HEAD
         config.setAllowedOrigins(Arrays.asList("http://172.28.24.85:8080"));
         config.setAllowedOrigins(Arrays.asList("http://192.168.0.159:3000"));
+=======
+        config.setAllowedOrigins(Arrays.asList("http://YOUR_IP:8080"));
+        config.setAllowedOrigins(Arrays.asList("http://YOUR_IP:3000"));
+>>>>>>> c6f55733adc87011c5bb48d809b591c48bb292ee
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS", "PATCH"));
         config.setAllowCredentials(true);
         config.addAllowedHeader("*");
