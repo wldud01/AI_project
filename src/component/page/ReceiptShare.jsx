@@ -104,11 +104,11 @@ function photoShare(props) {
   };
 
   useEffect(() => {
-    let apiUrl = "http://172.28.24.85:8080/spring/contents";
+    let apiUrl = "http://172.28.16.1:8080/spring/contents";
 
     if (selectedCat.length > 0) {
       // 선택한 카테고리가 존재하는 경우
-      apiUrl = `http://172.28.24.85:8080/spring/content/?id=${selectedCat}`;
+      apiUrl = `http://172.28.16.1:8080/spring/content/?id=${selectedCat}`;
     }
 
     axios
