@@ -1,2 +1,12 @@
 # AI_project
-인공지능 웹앱
+---
+- Front(master branch)
+  - React.js
+- Back(server branch, flask branch)
+  - Spring boot
+  - H2 DB
+  - Flask
+    - gunicorn
+  - Nginx(proxy server)
+- AI model
+  - simple MLP(sklearn)
