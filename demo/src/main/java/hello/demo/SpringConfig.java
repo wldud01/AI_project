@@ -99,8 +99,8 @@ public class SpringConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
 <<<<<<< HEAD
-        config.setAllowedOrigins(Arrays.asList("http://172.28.24.85:8080"));
-        config.setAllowedOrigins(Arrays.asList("http://192.168.0.159:3000"));
+        config.setAllowedOrigins(Arrays.asList("http://YOUR_IP:8080"));
+        config.setAllowedOrigins(Arrays.asList("http://YOUR_IP:3000"));
 =======
         config.setAllowedOrigins(Arrays.asList("http://YOUR_IP:8080"));
         config.setAllowedOrigins(Arrays.asList("http://YOUR_IP:3000"));
